@@ -1,0 +1,21 @@
+{
+  "name": "@xpring-eng/eslint-config-base",
+  "version": "1.0.0",
+  "description": "Xpring's base TS ESLint config, following our styleguide",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xpring-eng/eslint"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "styleguide"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint": ">= 6"
+  }
+}
