@@ -3,7 +3,12 @@
   "version": "0.1.0",
   "description": "Xpring's base TS ESLint config, following our styleguide",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "eslint-find-option-rules": "eslint-find-rules [option] <file> [flag]",
+    "unused": "eslint-find-rules --unused",
+    "plugin": "eslint-find-rules --plugin",
+    "lint": "eslint --report-unused-disable-directives ."
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/xpring-eng/eslint"
@@ -15,10 +20,15 @@
     "styleguide"
   ],
   "license": "MIT",
+  "dependencies": {},
   "peerDependencies": {
-    "eslint": ">= 6"
+    "eslint": ">= 6",
+    "eslint-plugin-import": "^2.20.1"
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-find-rules": "^3.4.0",
+    "eslint-plugin-import": "^2.20.1",
     "prettier": "^2.0.2"
   }
 }
