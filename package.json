@@ -1,0 +1,21 @@
+{
+  "name": "xpring-style",
+  "version": "1.0.0",
+  "description": "A TypeScript style guide for Xpring",
+  "scripts": {
+    "prettier": "prettier --write '**/*.{js,ts}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xpring-eng/eslint.git"
+  },
+  "keywords": [
+    "styleguide",
+    "xpring"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xpring-eng/eslint/issues"
+  },
+  "homepage": "https://github.com/xpring-eng/eslint#readme"
+}
