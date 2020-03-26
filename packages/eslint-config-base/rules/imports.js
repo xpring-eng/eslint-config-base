@@ -147,6 +147,48 @@ module.exports = {
     // dynamic imports require a leading comment with a webpackChunkName
     // https://github.com/benmosher/eslint-plugin-import/blob/ebafcbf59ec9f653b2ac2a0156ca3bcba0a7cf57/docs/rules/dynamic-import-chunkname.md
     'import/dynamic-import-chunkname': 'warn',
+
+    /* DISABLED RULES */
+    // Enforces that all exports are declared at the bottom of the file
+    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/exports-last.md
+    'import/exports-last': 'off',
+
+    // Prohibit default exports. Mostly an inverse of prefer-default-export.
+    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-default-export.md
+    'import/no-default-export': 'off',
+
+    // Note: This is a TERRIBLE rule.
+    // Prohibit named exports. Mostly an inverse of no-default-export.
+    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-export.md
+    'import/no-named-export': 'off',
+
+    // Note: This is a TERRIBLE rule.
+    // Use this rule to prevent importing the submodules of other modules.
+    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-internal-modules.md
+    'import/no-internal-modules': 'off',
+
+    // Note: Decent rule, but some JS libraries require using a wildcard import.
+    // Enforce a convention of not using namespace (a.k.a. "wildcard" *) imports.
+    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-namespace.md
+    'import/no-namespace': 'off',
+
+    // Forbid the use of Node.js builtin modules. Can be useful for client-side web projects that do not have access to those modules.
+    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-nodejs-modules.md
+    'import/no-nodejs-modules': 'off',
+
+    // Use this rule to prevent imports to folders in relative parent paths.
+    // This rule is useful for enforcing tree-like folder structures instead of complex graph-like folder structures.
+    // While this restriction might be a departure from Node's default resolution style, it can lead large, complex codebases to be easier to maintain.
+    // If you've ever had debates over "where to put files" this rule is for you.
+    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-relative-parent-imports.md
+    'import/no-relative-parent-imports': 'off',
+
+    // Some projects contain files which are not always meant to be executed in the same environment.
+    // For example consider a web application that contains specific code for the server and some specific code for the browser/client.
+    // In this case you don’t want to import server-only files in your client code.
+    // In order to prevent such scenarios this rule allows you to define restricted zones where you can forbid files from imported if they match a specific path.
+    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-restricted-paths.md
+    'import/no-restricted-paths': 'off',
   },
 
   overrides: [
