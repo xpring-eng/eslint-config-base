@@ -199,7 +199,7 @@ module.exports = {
 
   overrides: [
     {
-      files: ['test/**/*.ts'],
+      files: ['test/**/*.test.ts'],
       rules: {
         // Our Mocha test files never export anything.
         'import/no-unused-modules': 'off',
