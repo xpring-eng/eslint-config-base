@@ -109,8 +109,11 @@ module.exports = {
       {
         groups: [
           'builtin',
-          ['external', 'internal'],
-          ['parent', 'sibling', 'index'],
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
         ],
         'newlines-between': 'always',
         alphabetize: { order: 'asc', caseInsensitive: true },
@@ -146,6 +149,7 @@ module.exports = {
     // or when multiple assignments to CommonJS module.exports or exports object are present
     // in a single file.
     // https://github.com/benmosher/eslint-plugin-import/blob/44a038c06487964394b1e15b64f3bd34e5d40cde/docs/rules/group-exports.md
+    // TODO: Make this an error once we migrate our code
     'import/group-exports': 'warn',
 
     // dynamic imports require a leading comment with a webpackChunkName
@@ -187,6 +191,7 @@ module.exports = {
     // While this restriction might be a departure from Node's default resolution style, it can lead large, complex codebases to be easier to maintain.
     // If you've ever had debates over "where to put files" this rule is for you.
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-relative-parent-imports.md
+    // TODO: Enable this rule later to `warn`?
     'import/no-relative-parent-imports': 'off',
 
     // Some projects contain files which are not always meant to be executed in the same environment.
