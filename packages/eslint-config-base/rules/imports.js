@@ -53,8 +53,6 @@ module.exports = {
       },
     ],
 
-
-
     /* HELPFUL WARNINGS */
     // disallow use of jsdoc-marked-deprecated imports
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-deprecated.md
@@ -80,8 +78,6 @@ module.exports = {
     // disallow AMD require/define
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-amd.md
     'import/no-amd': 'error',
-
-
 
     /* STYLE GUIDE */
     // disallow non-import statements appearing before import statements
@@ -156,8 +152,6 @@ module.exports = {
     // https://github.com/benmosher/eslint-plugin-import/blob/ebafcbf59ec9f653b2ac2a0156ca3bcba0a7cf57/docs/rules/dynamic-import-chunkname.md
     'import/dynamic-import-chunkname': 'warn',
 
-
-
     /* DISABLED RULES */
     // Enforces that all exports are declared at the bottom of the file
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/exports-last.md
@@ -208,8 +202,10 @@ module.exports = {
       rules: {
         // Our Mocha test files never export anything.
         'import/no-unused-modules': 'off',
+
         // Importing mocha is a side-effecting import
         'import/no-unassigned-import': ['error', { allow: ['mocha'] }],
+
         // Warn when modules have too many dependencies (code smell)
         // Increased the max for test files, since tests usually need to import more things
         'import/max-dependencies': ['warn', { max: 8 }],
