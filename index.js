@@ -12,9 +12,8 @@ module.exports = {
     es2020: true, // Add all ECMAScript 2020 globals and automatically set the ecmaVersion parser option to ES2020
   },
 
-  extends: [
-    './rules/imports',
-    './rules/mocha',
-  ].map(require.resolve),
+  extends: ['./rules/imports', './rules/mocha', './rules/prettier'].map(
+    require.resolve,
+  ),
   rules: {},
 }
