@@ -20,17 +20,22 @@
     "styleguide"
   ],
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "eslint-config-prettier": "^6.10.1"
+  },
   "peerDependencies": {
     "eslint": ">= 6",
     "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-mocha": "^6.3.0"
+    "eslint-plugin-mocha": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^2.0.2"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-find-rules": "^3.4.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-mocha": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.2",
     "prettier": "^2.0.2"
   }
 }
