@@ -7,6 +7,8 @@
     "eslint-find-option-rules": "eslint-find-rules [option] <file> [flag]",
     "unused": "eslint-find-rules --unused",
     "plugin": "eslint-find-rules --plugin",
+    "check-prettier": "npx eslint --print-config index.js | npx eslint-config-prettier-check",
+    "check-prettier-test": "npx eslint --print-config test/index.test.js | npx eslint-config-prettier-check",
     "lint": "eslint --report-unused-disable-directives ."
   },
   "repository": {
