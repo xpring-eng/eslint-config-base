@@ -12,10 +12,6 @@ module.exports = {
 
   // These rules are not captured in the standard recommended configuration we extend above.
   rules: {
-    // For our Mocha test files, the pattern is to have unnamed functions
-    // https://eslint.org/docs/rules/func-names
-    'func-names': 'off',
-
     // Hooks should only be declared inside test suites, as they would otherwise be run before or after every test or test suite of the project.
     // This can lead to very confusing and unwanted effects.
     // https://github.com/lo1tuma/eslint-plugin-mocha/blob/master/docs/rules/no-top-level-hooks.md
@@ -60,11 +56,16 @@ module.exports = {
         mocha: true, // Global variables for mocha
       },
       rules: {
+        // For our Mocha test files, the pattern is to have unnamed functions
+        // https://eslint.org/docs/rules/func-names
+        'func-names': 'off',
+
         // Require using arrow functions for callbacks.
         // This rule is a variation of the core eslint prefer-arrow-callback rule that is mocha-aware and does not flag non-arrow callbacks within mocha functions.
+        // TODO: I bet this rule conflicts with running Prettier through ESLint: https://github.com/prettier/eslint-config-prettier#arrow-body-style-and-prefer-arrow-callback
         // https://github.com/lo1tuma/eslint-plugin-mocha/blob/1e32ad7bffb25c249cdd81ff3cb0d1a775d3dfe7/docs/rules/prefer-arrow-callback.md
         'prefer-arrow-callback': 'off',
-        'mocha/prefer-arrow-callback': 'error',
+        'mocha/prefer-arrow-callback': 'off',
 
         // It's reasonable to have hooks for single cases for when the describe block grows and more tests get added to that case.
         // https://github.com/lo1tuma/eslint-plugin-mocha/blob/1e32ad7bffb25c249cdd81ff3cb0d1a775d3dfe7/docs/rules/no-hooks-for-single-case.md
