@@ -153,6 +153,13 @@ module.exports = {
     'import/dynamic-import-chunkname': 'warn',
 
     /* DISABLED RULES */
+    // These rules are checked by TypeScript as part of standard type-checking
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#eslint-plugin-import
+    'import/named': 'off',
+    'import/namespace': 'off',
+    'import/default': 'off',
+    'import/no-named-as-default-member': 'off',
+
     // Enforces that all exports are declared at the bottom of the file
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/exports-last.md
     'import/exports-last': 'off',
