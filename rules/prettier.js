@@ -51,18 +51,6 @@ module.exports = {
     // https://eslint.org/docs/rules/no-tabs
     'no-tabs': 'warn',
 
-    // enforce the consistent use of either backticks, double, or single quotes
-    // Usually, you don’t need this rule at all with Prettier. But there are two cases where it could be useful:
-    // - To enforce the use of backticks rather than single or double quotes for strings.
-    // - To forbid backticks where regular strings could have been used.
-    // TODO: Might have to configure @typescript-eslint/quotes as well / instead.
-    // https://eslint.org/docs/rules/quotes
-    quotes: [
-      'error',
-      'single',
-      { avoidEscape: true, allowTemplateLiterals: false },
-    ],
-
     // Usually, Prettier takes care of following a maximum line length automatically.
     // However, there are cases where Prettier can’t do anything, such as for long strings, regular expressions and comments.
     // If you’d like to enforce an even stricter maximum line length policy than Prettier can provide automatically, you can enable this rule.

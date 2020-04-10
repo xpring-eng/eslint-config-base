@@ -141,21 +141,27 @@ module.exports = {
     // https://github.com/benmosher/eslint-plugin-import/blob/d9b712ac7fd1fddc391f7b234827925c160d956f/docs/rules/no-anonymous-default-export.md
     'import/no-anonymous-default-export': 'error',
 
-    // Reports when named exports are not grouped together in a single export declaration
-    // or when multiple assignments to CommonJS module.exports or exports object are present
-    // in a single file.
-    // https://github.com/benmosher/eslint-plugin-import/blob/44a038c06487964394b1e15b64f3bd34e5d40cde/docs/rules/group-exports.md
-    // TODO: Make this an error once we migrate our code
-    'import/group-exports': 'warn',
-
     // dynamic imports require a leading comment with a webpackChunkName
     // https://github.com/benmosher/eslint-plugin-import/blob/ebafcbf59ec9f653b2ac2a0156ca3bcba0a7cf57/docs/rules/dynamic-import-chunkname.md
     'import/dynamic-import-chunkname': 'warn',
 
     /* DISABLED RULES */
+    // These rules are checked by TypeScript as part of standard type-checking
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#eslint-plugin-import
+    'import/named': 'off',
+    'import/namespace': 'off',
+    'import/default': 'off',
+    'import/no-named-as-default-member': 'off',
+
     // Enforces that all exports are declared at the bottom of the file
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/exports-last.md
     'import/exports-last': 'off',
+
+    // Reports when named exports are not grouped together in a single export declaration
+    // or when multiple assignments to CommonJS module.exports or exports object are present
+    // in a single file.
+    // https://github.com/benmosher/eslint-plugin-import/blob/44a038c06487964394b1e15b64f3bd34e5d40cde/docs/rules/group-exports.md
+    'import/group-exports': 'off',
 
     // Prohibit default exports. Mostly an inverse of prefer-default-export.
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-default-export.md
