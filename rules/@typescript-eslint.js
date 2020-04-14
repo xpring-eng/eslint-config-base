@@ -287,6 +287,7 @@ module.exports = {
         // Allow numbers and booleans in template literal expressions
         allowNumber: true,
         allowBoolean: true,
+        allowAny: false,
         allowNullable: false,
       },
     ],
@@ -422,7 +423,19 @@ module.exports = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/member-ordering.md
     '@typescript-eslint/member-ordering': 'warn',
 
+    // Prefer using type parameter when calling Array#reduce instead of casting
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-reduce-type-parameter.md
+    '@typescript-eslint/prefer-reduce-type-parameter': 'warn',
+
+    // Recommends using // @ts-expect-error over // @ts-ignore
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-ts-expect-error.md
+    '@typescript-eslint/prefer-ts-expect-error': 'error',
+
     /* DISABLED RULES */
+
+    // Disallows assigning any to variables and properties
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-assignment.md
+    '@typescript-eslint/no-unsafe-assignment': 'off',
 
     // Use function types instead of interfaces with call signatures.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-function-type.md
