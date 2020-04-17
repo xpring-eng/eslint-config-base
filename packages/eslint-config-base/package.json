@@ -24,6 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "@typescript-eslint/parser": "^2.27.0",
+    "confusing-browser-globals": "^1.0.9",
     "eslint-config-prettier": "^6.10.1"
   },
   "peerDependencies": {
