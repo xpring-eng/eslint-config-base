@@ -13,6 +13,14 @@ module.exports = {
   },
 
   extends: [
+    // TODO: Can the eslint directory just export a index.js?
+    './rules/eslint-core/errors',
+    './rules/eslint-core/best-practices',
+    './rules/eslint-core/strict',
+    './rules/eslint-core/variables',
+    './rules/eslint-core/node',
+    './rules/eslint-core/style',
+    './rules/eslint-core/es6',
     './rules/@typescript-eslint',
     './rules/tsdoc',
     './rules/imports',
