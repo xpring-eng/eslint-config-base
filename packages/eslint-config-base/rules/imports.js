@@ -8,15 +8,15 @@ module.exports = {
   },
 
   plugins: ['import'],
-  extends: [
-    'plugin:import/warnings',
-    'plugin:import/errors',
-    'plugin:import/typescript',
-  ],
+  extends: ['plugin:import/typescript'],
 
-  // These rules are not captured in the standard warnings/errors/typescript configurations we extend above.
   rules: {
     /* STATIC ANALYSIS */
+
+    // Ensures an imported module can be resolved to a module on the local filesystem, as defined by standard Node require.resolve behavior.
+    // https://github.com/benmosher/eslint-plugin-import/blob/3aefa79f167b998485733a1d7f9ba53b8d5bcc80/docs/rules/no-unresolved.md
+    'import/no-unresolved': ['error', { commonjs: true }],
+
     // Forbid import of modules using absolute paths
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-absolute-path.md
     'import/no-absolute-path': 'error',
@@ -54,6 +54,15 @@ module.exports = {
     ],
 
     /* HELPFUL WARNINGS */
+
+    // Reports funny business with exports, like repeated exports of names or defaults.
+    // https://github.com/benmosher/eslint-plugin-import/blob/3aefa79f167b998485733a1d7f9ba53b8d5bcc80/docs/rules/export.md
+    'import/export': 'error',
+
+    // Reports use of an exported name as the locally imported name of a default export.
+    // https://github.com/benmosher/eslint-plugin-import/blob/3aefa79f167b998485733a1d7f9ba53b8d5bcc80/docs/rules/no-named-as-default.md
+    'import/no-named-as-default': 'error',
+
     // disallow use of jsdoc-marked-deprecated imports
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-deprecated.md
     'import/no-deprecated': 'warn',
@@ -67,6 +76,7 @@ module.exports = {
     'import/no-mutable-exports': 'error',
 
     /* MODULE SYSTEMS */
+
     // Warn if a module could be mistakenly parsed as a script by a consumer leveraging Unambiguous JavaScript Grammar
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/unambiguous.md
     'import/unambiguous': 'error',
@@ -80,9 +90,14 @@ module.exports = {
     'import/no-amd': 'error',
 
     /* STYLE GUIDE */
+
     // disallow non-import statements appearing before import statements
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/first.md
     'import/first': 'error',
+
+    // Reports if a resolved path is imported more than once.
+    // https://github.com/benmosher/eslint-plugin-import/blob/3aefa79f167b998485733a1d7f9ba53b8d5bcc80/docs/rules/no-duplicates.md
+    'import/no-duplicates': ['error', {"considerQueryString": true}],
 
     // Ensure consistent use of file extension within the import path
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
@@ -139,18 +154,26 @@ module.exports = {
 
     // Reports if a module's default export is unnamed
     // https://github.com/benmosher/eslint-plugin-import/blob/d9b712ac7fd1fddc391f7b234827925c160d956f/docs/rules/no-anonymous-default-export.md
-    'import/no-anonymous-default-export': 'error',
+    'import/no-anonymous-default-export': ['error', {
+      allowArray: false,
+      allowArrowFunction: false,
+      allowAnonymousClass: false,
+      allowAnonymousFunction: false,
+      allowLiteral: false,
+      allowObject: false
+    }],
 
     // dynamic imports require a leading comment with a webpackChunkName
     // https://github.com/benmosher/eslint-plugin-import/blob/ebafcbf59ec9f653b2ac2a0156ca3bcba0a7cf57/docs/rules/dynamic-import-chunkname.md
     'import/dynamic-import-chunkname': 'warn',
 
     /* DISABLED RULES */
+
     // These rules are checked by TypeScript as part of standard type-checking
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#eslint-plugin-import
     'import/named': 'off',
-    'import/namespace': 'off',
     'import/default': 'off',
+    'import/namespace': 'off',
     'import/no-named-as-default-member': 'off',
 
     // Enforces that all exports are declared at the bottom of the file

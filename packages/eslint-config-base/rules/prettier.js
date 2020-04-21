@@ -12,7 +12,11 @@ module.exports = {
 
   // TODO: Add prettier/@typescript-eslint or others?
   // https://github.com/prettier/eslint-config-prettier#installation
-  extends: ['prettier'],
+  extends: [
+    // Disable reporting on rules that Prettier will auto-fix
+    'prettier',
+    'prettier/@typescript-eslint',
+  ],
 
   // These rules are disabled by default, but can be enabled as long as you have read documentation (which I have).
   rules: {
