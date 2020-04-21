@@ -122,7 +122,7 @@ module.exports = {
 
     // Enforces naming conventions for everything across a codebase.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md
-    'camelcase': 'off',
+    camelcase: 'off',
     '@typescript-eslint/naming-convention': [
       'warn',
       // TODO: Should we enforce strictCamelCase?
@@ -424,15 +424,6 @@ module.exports = {
       },
     ],
 
-    // Requires that function parameters are typed as readonly to prevent accidental mutation of inputs.
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-readonly-parameter-types.md
-    '@typescript-eslint/prefer-readonly-parameter-types': [
-      'warn',
-      {
-        checkParameterProperties: true,
-      },
-    ],
-
     // Prefer using type parameter when calling Array#reduce instead of casting
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-reduce-type-parameter.md
     '@typescript-eslint/prefer-reduce-type-parameter': 'warn',
@@ -559,13 +550,32 @@ module.exports = {
       'warn',
       {
         ignore: [
+          // Basic numbers
+          -2,
+          -1,
+          0,
+          1,
+          2,
+
           // HTTP status codes
-          200, 201, 202, 204,
-          400, 401, 403, 404, 409, 415, 451,
-          500, 501, 503,
+          200,
+          201,
+          202,
+          204,
+          400,
+          401,
+          403,
+          404,
+          409,
+          415,
+          451,
+          500,
+          501,
+          503,
 
           // Port numbers
-          8080, 8081,
+          8080,
+          8081,
         ],
 
         // TODO: Should ignore array indexes be true?
@@ -682,6 +692,16 @@ module.exports = {
     // Use function types instead of interfaces with call signatures.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-function-type.md
     '@typescript-eslint/prefer-function-type': 'off',
+
+    // Requires that function parameters are typed as readonly to prevent accidental mutation of inputs.
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/prefer-readonly-parameter-types.md
+    // TODO: I'd like to enable this, but it seems pretty broken
+    '@typescript-eslint/prefer-readonly-parameter-types': [
+      'off',
+      {
+        checkParameterProperties: true,
+      },
+    ],
 
     // Disallow async functions which have no await expression
     // According to Airbnb, this is a horrible rule that should never be used
