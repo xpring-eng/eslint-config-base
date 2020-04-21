@@ -360,7 +360,7 @@ module.exports = {
         'max-lines-per-function': 'off',
 
         // Mocha nests callbacks using describe(it())
-        'max-nested-callbacks': ['warn', { max: 2 }],
+        'max-nested-callbacks': ['warn', { max: 3 }],
       },
     },
   ],
