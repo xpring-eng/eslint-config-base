@@ -6,6 +6,7 @@ module.exports = {
 
     // Enforces that a return statement is present in property getters
     // https://eslint.org/docs/rules/getter-return
+    // Checked by TypeScript: https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/src/configs/eslint-recommended.ts
     'getter-return': ['error', { allowImplicit: true }],
 
     // disallow using an async function as a Promise executor
@@ -42,6 +43,7 @@ module.exports = {
 
     // disallow duplicate arguments in functions
     // https://eslint.org/docs/rules/no-dupe-args
+    // Checked by TypeScript: https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/src/configs/eslint-recommended.ts
     'no-dupe-args': 'error',
 
     // Disallow duplicate conditions in if-else-if chains
@@ -50,6 +52,7 @@ module.exports = {
 
     // disallow duplicate keys when creating object literals
     // https://eslint.org/docs/rules/no-dupe-keys
+    // Checked by TypeScript: https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/src/configs/eslint-recommended.ts
     'no-dupe-keys': 'error',
 
     // disallow a duplicate case label.
@@ -133,6 +136,7 @@ module.exports = {
 
     // disallow unreachable statements after a return, throw, continue, or break statement
     // https://eslint.org/docs/rules/no-unreachable
+    // Checked by TypeScript: https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/src/configs/eslint-recommended.ts
     'no-unreachable': 'error',
 
     // disallow return/throw/break/continue inside finally blocks
@@ -154,10 +158,14 @@ module.exports = {
 
     // disallow comparisons with the value NaN
     // https://eslint.org/docs/rules/use-isnan
-    'use-isnan': ['error', {"enforceForSwitchCase": true, 'enforceForIndexOf': true}],
+    'use-isnan': [
+      'error',
+      { enforceForSwitchCase: true, enforceForIndexOf: true },
+    ],
 
     // ensure that the results of typeof are compared against a valid string
     // https://eslint.org/docs/rules/valid-typeof
+    // Checked by TypeScript https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/src/configs/eslint-recommended.ts
     'valid-typeof': ['error', { requireStringLiterals: true }],
   },
 }
