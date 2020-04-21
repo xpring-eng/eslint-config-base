@@ -52,4 +52,14 @@ module.exports = {
     // https://eslint.org/docs/rules/no-restricted-modules
     'no-restricted-modules': 'off',
   },
+
+  overrides: [
+    {
+      files: ['config.ts'],
+      rules: {
+        // We use process.env in our config files
+        'no-process-env': 'off',
+      },
+    },
+  ],
 }

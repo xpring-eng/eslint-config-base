@@ -67,7 +67,7 @@ module.exports = {
     // TODO: Make this less strict?
     '@typescript-eslint/consistent-type-assertions': [
       'error',
-      { assertionStyle: 'never', objectLiteralTypeAssertions: 'never' },
+      { assertionStyle: 'never' },
     ],
 
     // Consistent with object type definitions using either interface or type
@@ -82,7 +82,8 @@ module.exports = {
         allowExpressions: false,
         allowTypedFunctionExpressions: true,
         allowHigherOrderFunctions: true,
-        allowConciseArrowFunctionExpressionStartingWithVoid: true,
+        allowDirectConstAssertionInArrowFunctions: true,
+        allowConciseArrowFunctionExpressionsStartingWithVoid: true,
       },
     ],
 
@@ -121,6 +122,7 @@ module.exports = {
 
     // Enforces naming conventions for everything across a codebase.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md
+    'camelcase': 'off',
     '@typescript-eslint/naming-convention': [
       'warn',
       // TODO: Should we enforce strictCamelCase?
@@ -171,6 +173,16 @@ module.exports = {
           regex: 's$',
           match: false,
         },
+      },
+      // Enforce that enumMembers are PascalCase
+      {
+        selector: 'enumMember',
+        format: ['PascalCase'],
+      },
+      // Allow property names to be snake_case
+      {
+        selector: 'property',
+        format: ['camelCase', 'snake_case'],
       },
     ],
 
@@ -273,12 +285,7 @@ module.exports = {
 
     // Disallow the use of parameter properties in class constructors.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-parameter-properties.md
-    '@typescript-eslint/no-parameter-properties': [
-      'warn',
-      {
-        allows: [],
-      },
-    ],
+    '@typescript-eslint/no-parameter-properties': 'warn',
 
     // Disallows invocation of require()
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-require-imports.md
@@ -470,7 +477,7 @@ module.exports = {
     // Enforce template literal expressions to be of string type.
     //https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/restrict-template-expressions.md
     '@typescript-eslint/restrict-template-expressions': [
-      'warn',
+      'error',
       {
         // Allow numbers and booleans in template literal expressions
         allowNumber: true,
@@ -551,7 +558,15 @@ module.exports = {
     '@typescript-eslint/no-magic-numbers': [
       'warn',
       {
-        ignore: [],
+        ignore: [
+          // HTTP status codes
+          200, 201, 202, 204,
+          400, 401, 403, 404, 409, 415, 451,
+          500, 501, 503,
+
+          // Port numbers
+          8080, 8081,
+        ],
 
         // TODO: Should ignore array indexes be true?
         ignoreArrayIndexes: true,
@@ -675,5 +690,10 @@ module.exports = {
     '@typescript-eslint/require-await': 'off',
   },
 
-  overrides: [],
+  overrides: [
+    {
+      files: ['test/**/*.test.ts'],
+      rules: {},
+    },
+  ],
 }

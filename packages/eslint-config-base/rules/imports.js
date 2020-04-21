@@ -44,7 +44,7 @@ module.exports = {
     // Reports modules without any exports, or with unused exports
     // https://github.com/benmosher/eslint-plugin-import/blob/f63dd261809de6883b13b6b5b960e6d7f42a7813/docs/rules/no-unused-modules.md
     'import/no-unused-modules': [
-      'error',
+      'warn',
       {
         // TODO: I would like to enable missingExports, but it doesn't work for files that only export types:
         // https://github.com/benmosher/eslint-plugin-import/issues/1680

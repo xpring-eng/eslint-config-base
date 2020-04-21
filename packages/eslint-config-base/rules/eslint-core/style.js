@@ -41,7 +41,7 @@ module.exports = {
 
     // Blacklist certain identifiers to prevent them being used
     // https://eslint.org/docs/rules/id-blacklist
-    'id-blacklist': ['e', 'cb', 'callback'],
+    'id-blacklist': ['error', 'e', 'cb', 'callback'],
 
     // this option enforces minimum and maximum identifier lengths
     // (variable names, property names etc.)
@@ -96,7 +96,7 @@ module.exports = {
 
     // specify the maximum depth callbacks can be nested
     // https://eslint.org/docs/rules/max-nested-callbacks
-    'max-nested-callbacks': ['warn', { max: 0 }],
+    'max-nested-callbacks': ['warn', { max: 1 }],
 
     // limits the number of parameters that can be used in the function declaration.
     // https://eslint.org/docs/rules/max-params
@@ -104,7 +104,7 @@ module.exports = {
 
     // specify the maximum number of statement allowed in a function
     // https://eslint.org/docs/rules/max-statements
-    'max-statements': ['warn', { max: 10, ignoreTopLevelFunctions: true }],
+    'max-statements': ['warn', 10, { ignoreTopLevelFunctions: true }],
 
     // restrict the number of statements per line
     // https://eslint.org/docs/rules/max-statements-per-line
@@ -348,4 +348,20 @@ module.exports = {
     // https://eslint.org/docs/rules/sort-vars
     'sort-vars': 'off',
   },
+
+  overrides: [
+    {
+      files: ['test/**/*.test.ts'],
+      rules: {
+        // We use `const var = function expression` in tests to wrap functions that we expect to throw an error
+        'func-style': 'off',
+
+        // describe blocks count as a function in Mocha tests, and can be insanely long
+        'max-lines-per-function': 'off',
+
+        // Mocha nests callbacks using describe(it())
+        'max-nested-callbacks': ['warn', { max: 2 }],
+      },
+    },
+  ],
 }
