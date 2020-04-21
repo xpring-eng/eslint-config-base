@@ -13,8 +13,8 @@ module.exports = {
   // TODO: Add prettier/@typescript-eslint or others?
   // https://github.com/prettier/eslint-config-prettier#installation
   extends: [
-    'prettier',
     // Disable reporting on rules that Prettier will auto-fix
+    'prettier',
     'prettier/@typescript-eslint',
   ],
 
