@@ -14,18 +14,22 @@ module.exports = {
 
     // disallow modifying variables that are declared using const
     // https://eslint.org/docs/rules/no-const-assign
+    // Checked by TypeScript: https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/src/configs/eslint-recommended.ts
     'no-const-assign': 'error',
 
     // disallow duplicate class members
     // https://eslint.org/docs/rules/no-dupe-class-members
+    // Checked by TypeScript: https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/src/configs/eslint-recommended.ts
     'no-dupe-class-members': 'error',
 
     // disallow symbol constructor
     // https://eslint.org/docs/rules/no-new-symbol
+    // Checked by TypeScript: https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/src/configs/eslint-recommended.ts
     'no-new-symbol': 'error',
 
     // disallow to use this/super before super() calling in constructors.
     // https://eslint.org/docs/rules/no-this-before-super
+    // Checked by TypeScript: https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/src/configs/eslint-recommended.ts
     'no-this-before-super': 'error',
 
     // disallow useless computed property keys

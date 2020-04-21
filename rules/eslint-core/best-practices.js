@@ -228,6 +228,7 @@ module.exports = {
 
     // disallow declaring the same variable more then once
     // https://eslint.org/docs/rules/no-redeclare
+    // Checked by TypeScript: https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/src/configs/eslint-recommended.ts
     'no-redeclare': 'error',
 
     // disallow certain object properties

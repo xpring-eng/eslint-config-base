@@ -31,6 +31,7 @@ module.exports = {
 
     // disallow use of undeclared variables unless mentioned in a /*global */ block
     // https://eslint.org/docs/rules/no-undef
+    // Checked by TypeScript in --strict mode: https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/src/configs/eslint-recommended.ts
     'no-undef': ['error', { typeof: true }],
 
     // disallow use of undefined when initializing variables
