@@ -361,6 +361,9 @@ module.exports = {
 
         // Mocha nests callbacks using describe(it())
         'max-nested-callbacks': ['warn', { max: 3 }],
+
+        // It's reasonable for describe blocks to have a large number of tests
+        'max-statements': ['warn', 20, { ignoreTopLevelFunctions: true }],
       },
     },
   ],
