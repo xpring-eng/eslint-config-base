@@ -227,6 +227,14 @@ module.exports = {
 
   overrides: [
     {
+      files: ['test/**/*.ts'],
+      rules: {
+        // Warn when modules have too many dependencies (code smell)
+        // Increased the max for test files and test helper files, since tests usually need to import more things
+        'import/max-dependencies': ['warn', { max: 8 }],
+      }
+    },
+    {
       files: ['test/**/*.test.ts'],
       rules: {
         // Our Mocha test files never export anything.
@@ -235,9 +243,6 @@ module.exports = {
         // Importing mocha is a side-effecting import
         'import/no-unassigned-import': ['error', { allow: ['mocha'] }],
 
-        // Warn when modules have too many dependencies (code smell)
-        // Increased the max for test files, since tests usually need to import more things
-        'import/max-dependencies': ['warn', { max: 8 }],
       },
     },
   ],
