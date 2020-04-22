@@ -555,31 +555,10 @@ module.exports = {
       {
         ignore: [
           // Basic numbers
-          -2,
           -1,
           0,
           1,
-          2,
-
-          // HTTP status codes
-          200,
-          201,
-          202,
-          204,
-          400,
-          401,
-          403,
-          404,
-          409,
-          415,
-          451,
-          500,
-          501,
-          503,
-
-          // Port numbers
-          8080,
-          8081,
+          // 2,
         ],
 
         // TODO: Should ignore array indexes be true?
@@ -716,8 +695,18 @@ module.exports = {
 
   overrides: [
     {
+      files: ['config.ts'],
+      rules: {
+        // Our config file often has "magic numbers" as default port numbers or other things
+        '@typescript-eslint/no-magic-numbers': 'off',
+      },
+    },
+    {
       files: ['test/**/*.test.ts'],
-      rules: {},
+      rules: {
+        // No need to handle promise exceptions in test blocks, since they'll just be handled anyways.
+        '@typescript-eslint/no-floating-promises': 'off',
+      },
     },
   ],
 }
