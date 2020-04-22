@@ -169,6 +169,10 @@ module.exports = {
       {
         selector: 'enum',
         format: ['PascalCase'],
+        filter: {
+          regex: 'Status$',
+          match: false,
+        },
         custom: {
           regex: 's$',
           match: false,
