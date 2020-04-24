@@ -205,20 +205,6 @@ module.exports = {
       },
     ],
 
-    // disallow dangling underscores in identifiers
-    // https://eslint.org/docs/rules/no-underscore-dangle
-    // TODO: Disable?
-    'no-underscore-dangle': [
-      'error',
-      {
-        allow: [],
-        allowAfterThis: true,
-        allowAfterSuper: false,
-        allowAfterThisConstructor: false,
-        enforceInMethodNames: true,
-      },
-    ],
-
     // disallow ternary operators when simpler alternatives exist
     // https://eslint.org/docs/rules/no-unneeded-ternary
     'no-unneeded-ternary': ['error', { defaultAssignment: false }],
@@ -330,6 +316,19 @@ module.exports = {
     // https://eslint.org/docs/rules/id-match
     // @typescript-eslint/naming-convention is much more configurable
     'id-match': 'off',
+
+    // disallow dangling underscores in identifiers
+    // https://eslint.org/docs/rules/no-underscore-dangle
+    'no-underscore-dangle': [
+      'off',
+      {
+        allow: [],
+        allowAfterThis: true,
+        allowAfterSuper: false,
+        allowAfterThisConstructor: false,
+        enforceInMethodNames: true,
+      },
+    ],
 
     // disallow the use of ternary operators
     // https://eslint.org/docs/rules/no-ternary
