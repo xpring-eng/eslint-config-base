@@ -482,19 +482,6 @@ module.exports = {
       },
     ],
 
-    // Restricts the types allowed in boolean expressions (ternary, if statements, &&, ||, ...)
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/strict-boolean-expressions.md
-    '@typescript-eslint/strict-boolean-expressions': [
-      'warn',
-      {
-        allowNullable: true,
-        // allow non-falsy types (i.e. non string / number / boolean) in addition to boolean as a type of all boolean expressions
-        allowSafe: false,
-        // Allow && and || to be used for short-circuiting behavior
-        ignoreRhs: true,
-      },
-    ],
-
     // Exhaustiveness checking in switch with union type.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/switch-exhaustiveness-check.md
     '@typescript-eslint/switch-exhaustiveness-check': 'error',
@@ -691,6 +678,17 @@ module.exports = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/require-await.md
     'require-await': 'off',
     '@typescript-eslint/require-await': 'off',
+
+    // Restricts the types allowed in boolean expressions (ternary, if statements, &&, ||, ...)
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/strict-boolean-expressions.md
+    '@typescript-eslint/strict-boolean-expressions': [
+      'off',
+      {
+        allowNullable: true,
+        allowSafe: true,
+        ignoreRhs: true,
+      },
+    ],
   },
 
   overrides: [
