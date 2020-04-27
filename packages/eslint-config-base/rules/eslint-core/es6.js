@@ -77,26 +77,6 @@ module.exports = {
       },
     ],
 
-    // Prefer destructuring from arrays and objects
-    // https://eslint.org/docs/rules/prefer-destructuring
-    // TODO: Go back to airbnb style? https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/es6.js
-    'prefer-destructuring': [
-      'error',
-      {
-        VariableDeclarator: {
-          array: true,
-          object: true,
-        },
-        AssignmentExpression: {
-          array: true,
-          object: true,
-        },
-      },
-      {
-        enforceForRenamedProperties: false,
-      },
-    ],
-
     // disallow parseInt() in favor of binary, octal, and hexadecimal literals
     // https://eslint.org/docs/rules/prefer-numeric-literals
     'prefer-numeric-literals': 'error',
@@ -149,6 +129,28 @@ module.exports = {
       {
         paths: [],
         patterns: [],
+      },
+    ],
+
+    // Prefer destructuring from arrays and objects
+    // https://eslint.org/docs/rules/prefer-destructuring
+    // TODO: Go back to airbnb style? https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/es6.js
+    // TODO: I'd like to enable this rule, but I think we need a type-aware version:
+    // https://github.com/typescript-eslint/typescript-eslint/issues/1931
+    'prefer-destructuring': [
+      'off',
+      {
+        VariableDeclarator: {
+          array: true,
+          object: true,
+        },
+        AssignmentExpression: {
+          array: true,
+          object: true,
+        },
+      },
+      {
+        enforceForRenamedProperties: false,
       },
     ],
 
