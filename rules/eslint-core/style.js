@@ -48,16 +48,6 @@ module.exports = {
     // https://eslint.org/docs/rules/id-length
     'id-length': ['error', { min: 2, properties: 'always', exceptions: [] }],
 
-    // enforce position of line comments
-    // https://eslint.org/docs/rules/line-comment-position
-    'line-comment-position': [
-      'warn',
-      {
-        position: 'above',
-        ignorePattern: '',
-      },
-    ],
-
     // Enforce empty lines between multi-line class members (like method definitions),
     // but not between single line class members (like properties on a database model).
     // https://eslint.org/docs/rules/lines-between-class-members
@@ -316,6 +306,17 @@ module.exports = {
     // https://eslint.org/docs/rules/id-match
     // @typescript-eslint/naming-convention is much more configurable
     'id-match': 'off',
+
+    // enforce position of line comments
+    // https://eslint.org/docs/rules/line-comment-position
+    // Mostly taken care of by no-inline-comments
+    'line-comment-position': [
+      'off',
+      {
+        position: 'above',
+        ignorePattern: '',
+      },
+    ],
 
     // disallow dangling underscores in identifiers
     // https://eslint.org/docs/rules/no-underscore-dangle
