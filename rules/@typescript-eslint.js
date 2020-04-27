@@ -255,6 +255,15 @@ module.exports = {
       },
     ],
 
+    // Disallows usage of void type outside of generic or return types
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-invalid-void-type.md
+    '@typescript-eslint/no-invalid-void-type': [
+      'error',
+      {
+        allowInGenericTypeArguments: true,
+      },
+    ],
+
     // Enforce valid definition of `new` and `constructor`
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-misused-new.md
     '@typescript-eslint/no-misused-new': 'error',
@@ -512,6 +521,14 @@ module.exports = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/default-param-last.md
     'default-param-last': 'off',
     '@typescript-eslint/default-param-last': 'error',
+
+    // Enforce dot notation whenever possible
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/dot-notation.md
+    'dot-notation': 'off',
+    'dot-notation': [
+      'error',
+      { allowKeywords: true, allowPrivateClassPropertyAccess: true },
+    ],
 
     // Disallow generic Array constructors
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-array-constructor.md
