@@ -38,11 +38,6 @@ module.exports = {
     // https://eslint.org/docs/rules/no-undef-init
     'no-undef-init': 'error',
 
-    // disallow use of undefined variable
-    // https://eslint.org/docs/rules/no-undefined
-    // TODO: disable? (Handled by no-global-assign and no-shadow-restricted-names)
-    'no-undefined': 'warn',
-
     // disallow declaration of variables that are not used in the code.
     // This is disabled & supplemented by `@typescript-eslint`.
     // https://eslint.org/docs/rules/no-unused-vars
@@ -55,5 +50,11 @@ module.exports = {
     // This is disabled & supplemented by `@typescript-eslint`.
     // https://eslint.org/docs/rules/no-use-before-define
     'no-use-before-define': ['error', { functions: false }],
+
+    /* DISABLED RULES */
+    // disallow use of undefined variable
+    // https://eslint.org/docs/rules/no-undefined
+    // (Handled by no-global-assign and no-shadow-restricted-names)
+    'no-undefined': 'off',
   },
 }
