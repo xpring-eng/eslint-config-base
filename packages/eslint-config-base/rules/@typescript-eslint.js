@@ -229,9 +229,8 @@ module.exports = {
     // Requires Promise-like values to be handled appropriately.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-floating-promises.md
     '@typescript-eslint/no-floating-promises': [
-      'warn',
+      'error',
       {
-        // TODO: Should ignoreVoid be true?
         ignoreVoid: true,
         ignoreIIFE: true,
       },
