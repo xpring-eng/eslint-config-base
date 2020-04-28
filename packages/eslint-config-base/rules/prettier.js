@@ -29,8 +29,10 @@ module.exports = {
 
     // require empty lines around comments
     // https://eslint.org/docs/rules/lines-around-comment
+    // TODO: I'd like to enable this, but we probably need a TS-enabled version:
+    // https://github.com/typescript-eslint/typescript-eslint/issues/1933
     'lines-around-comment': [
-      'warn',
+      'off',
       {
         beforeBlockComment: true,
         afterBlockComment: false,
