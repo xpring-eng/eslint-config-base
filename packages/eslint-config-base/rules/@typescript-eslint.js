@@ -524,9 +524,10 @@ module.exports = {
 
     // Enforce dot notation whenever possible
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/dot-notation.md
+    // TODO: Enable this rule after https://github.com/typescript-eslint/typescript-eslint/issues/1945
     'dot-notation': 'off',
-    'dot-notation': [
-      'error',
+    '@typescript-eslint/dot-notation': [
+      'off',
       { allowKeywords: true, allowPrivateClassPropertyAccess: true },
     ],
 
