@@ -651,7 +651,7 @@ module.exports = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/return-await.md
     // TODO: Go back to in-try-catch default?
     'no-return-await': 'off',
-    '@typescript-eslint/return-await': ['error', 'always'],
+    '@typescript-eslint/return-await': ['error', 'in-try-catch'],
 
     /* DISABLED RULES */
     // These rules never need to be enabled when using Prettier
