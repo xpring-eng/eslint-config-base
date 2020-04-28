@@ -195,6 +195,19 @@ module.exports = {
       },
     ],
 
+    // disallow dangling underscores in identifiers
+    // https://eslint.org/docs/rules/no-underscore-dangle
+    'no-underscore-dangle': [
+      'warn',
+      {
+        allow: [],
+        allowAfterThis: false,
+        allowAfterSuper: false,
+        allowAfterThisConstructor: false,
+        enforceInMethodNames: true,
+      },
+    ],
+
     // disallow ternary operators when simpler alternatives exist
     // https://eslint.org/docs/rules/no-unneeded-ternary
     'no-unneeded-ternary': ['error', { defaultAssignment: false }],
@@ -315,19 +328,6 @@ module.exports = {
       {
         position: 'above',
         ignorePattern: '',
-      },
-    ],
-
-    // disallow dangling underscores in identifiers
-    // https://eslint.org/docs/rules/no-underscore-dangle
-    'no-underscore-dangle': [
-      'off',
-      {
-        allow: [],
-        allowAfterThis: true,
-        allowAfterSuper: false,
-        allowAfterThisConstructor: false,
-        enforceInMethodNames: true,
       },
     ],
 
