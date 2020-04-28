@@ -564,6 +564,9 @@ module.exports = {
           0,
           1,
           // 2,
+
+          // Often need to convert milliseconds to/from seconds.
+          1000,
         ],
 
         // TODO: Should ignore array indexes be true?
