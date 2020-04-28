@@ -9,20 +9,14 @@ module.exports = {
 
     // enforce or disallow capitalization of the first letter of a comment
     // https://eslint.org/docs/rules/capitalized-comments
-    // TODO: Disable?
+    // TODO: Enable when this gets addressed: https://github.com/eslint/eslint/issues/13229
     'capitalized-comments': [
-      'warn',
+      'off',
       'always',
       {
-        line: {
-          ignorePattern: '@ts',
-          ignoreInlineComments: true,
-          ignoreConsecutiveComments: true,
-        },
-        block: {
-          ignoreInlineComments: true,
-          ignoreConsecutiveComments: true,
-        },
+        ignorePattern: '@ts',
+        ignoreInlineComments: true,
+        ignoreConsecutiveComments: true,
       },
     ],
 
