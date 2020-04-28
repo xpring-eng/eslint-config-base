@@ -32,7 +32,7 @@ module.exports = {
     // Bans // @ts-<directive> comments from being used
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-ts-comment.md
     '@typescript-eslint/ban-ts-comment': [
-      'warn',
+      'error',
       {
         'ts-expect-error': true,
         'ts-ignore': true,
