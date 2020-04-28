@@ -21,8 +21,7 @@ module.exports = {
       'error',
       {
         default: 'array',
-        // TODO: 'array' for readonly?
-        readonly: 'generic',
+        readonly: 'array',
       },
     ],
 
