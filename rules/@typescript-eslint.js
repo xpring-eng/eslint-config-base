@@ -146,12 +146,14 @@ module.exports = {
         format: ['PascalCase'],
       },
       // Enforce that private members are prefixed with an underscore.
-      {
-        selector: 'memberLike',
-        modifiers: ['private'],
-        format: ['camelCase'],
-        leadingUnderscore: 'require',
-      },
+      // Disabled because Microsoft's style guide argues against it:
+      // https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
+      // {
+      //   selector: 'memberLike',
+      //   modifiers: ['private'],
+      //   format: ['camelCase'],
+      //   leadingUnderscore: 'require',
+      // },
       // Enforce that boolean variables are prefixed with an allowed verb.
       {
         selector: 'variable',
