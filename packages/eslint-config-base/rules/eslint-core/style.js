@@ -73,8 +73,8 @@ module.exports = {
       {
         max: 30,
         skipBlankLines: false,
-        skipComments: true,
-        IIFEs: true,
+        skipComments: false,
+        IIFEs: false,
       },
     ],
 
