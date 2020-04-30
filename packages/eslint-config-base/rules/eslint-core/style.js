@@ -80,7 +80,7 @@ module.exports = {
 
     // specify the maximum depth callbacks can be nested
     // https://eslint.org/docs/rules/max-nested-callbacks
-    'max-nested-callbacks': ['warn', { max: 1 }],
+    'max-nested-callbacks': ['warn', { max: 2 }],
 
     // limits the number of parameters that can be used in the function declaration.
     // https://eslint.org/docs/rules/max-params
