@@ -323,8 +323,7 @@ module.exports = {
     '@typescript-eslint/no-type-alias': [
       'warn',
       {
-        // TODO: Should this be always? never?
-        allowAliases: 'in-unions-and-intersections',
+        allowAliases: 'always',
         allowCallbacks: 'never',
         allowConditionalTypes: 'always',
         allowConstructors: 'never',
