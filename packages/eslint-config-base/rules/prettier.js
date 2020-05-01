@@ -68,7 +68,10 @@ module.exports = {
       {
         code: 80,
         tabWidth: 2,
-        comments: 120,
+        // I like the idea of comments being 1.5 * code,
+        // but in practice, I had a lot of comments that were ~126 or 127 lines,
+        // and making them shorter didn't actually look like an improvement.
+        comments: 130,
         ignoreTrailingComments: true,
         ignoreUrls: true,
         ignoreStrings: true,
