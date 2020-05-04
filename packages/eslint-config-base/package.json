@@ -23,7 +23,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@typescript-eslint/parser": "^2.30.0",
+    "@typescript-eslint/parser": "^2.31.0",
     "confusing-browser-globals": "^1.0.9",
     "eslint-config-prettier": "^6.11.0"
   },
