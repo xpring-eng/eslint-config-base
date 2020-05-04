@@ -23,7 +23,7 @@ module.exports = {
     './rules/eslint-core/es6',
     './rules/@typescript-eslint',
     './rules/tsdoc',
-    './rules/imports',
+    './rules/import',
     './rules/mocha',
     './rules/prettier',
   ].map(
