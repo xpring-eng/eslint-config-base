@@ -2,11 +2,6 @@ const confusingBrowserGlobals = require('confusing-browser-globals')
 
 module.exports = {
   rules: {
-    // enforce or disallow variable initializations at definition
-    // I can't think of when you would _ever_ want to use this rule.
-    // https://eslint.org/docs/rules/init-declarations
-    'init-declarations': 'off',
-
     // disallow deletion of variables
     // https://eslint.org/docs/rules/no-delete-var
     'no-delete-var': 'error',
@@ -52,6 +47,11 @@ module.exports = {
     'no-use-before-define': ['error', { functions: false }],
 
     /* DISABLED RULES */
+    // enforce or disallow variable initializations at definition
+    // I can't think of when you would _ever_ want to use this rule.
+    // https://eslint.org/docs/rules/init-declarations
+    'init-declarations': 'off',
+
     // disallow use of undefined variable
     // https://eslint.org/docs/rules/no-undefined
     // (Handled by no-global-assign and no-shadow-restricted-names)
