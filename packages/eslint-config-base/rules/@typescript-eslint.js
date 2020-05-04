@@ -63,9 +63,9 @@ module.exports = {
 
     // This rule aims to standardize the use of type assertion style across the codebase.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-assertions.md
-    // TODO: Make this less strict?
+    // TODO: Make this more strict?
     '@typescript-eslint/consistent-type-assertions': [
-      'error',
+      'warn',
       { assertionStyle: 'never' },
     ],
 
