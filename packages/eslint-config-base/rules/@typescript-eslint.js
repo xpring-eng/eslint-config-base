@@ -523,10 +523,9 @@ module.exports = {
 
     // Enforce dot notation whenever possible
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/dot-notation.md
-    // TODO: Enable this rule after https://github.com/typescript-eslint/typescript-eslint/issues/1945
     'dot-notation': 'off',
     '@typescript-eslint/dot-notation': [
-      'off',
+      'error',
       { allowKeywords: true, allowPrivateClassPropertyAccess: true },
     ],
 
@@ -550,6 +549,11 @@ module.exports = {
         allow: [],
       },
     ],
+
+    // Disallow this keywords outside of classes or class-like objects
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-invalid-this.md
+    'no-invalid-this': 'off',
+    '@typescript-eslint/no-invalid-this': 'error',
 
     // Disallow magic numbers.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-magic-numbers.md
