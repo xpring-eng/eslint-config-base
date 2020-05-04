@@ -367,18 +367,22 @@ module.exports = {
 
     // Disallows assigning any to variables and properties
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-assignment.md
+    // TODO: ERROR?
     '@typescript-eslint/no-unsafe-assignment': 'warn',
 
     // Disallows calling (function calls) on an `any` type value.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-call.md
+    // TODO: ERROR?
     '@typescript-eslint/no-unsafe-call': 'warn',
 
     // Disallows member access on an `any` type value.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-member-access.md
+    // TODO: ERROR?
     '@typescript-eslint/no-unsafe-member-access': 'warn',
 
     // Disallows returning an `any` type value from a function.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-return.md
+    // TODO: ERROR?
     '@typescript-eslint/no-unsafe-return': 'warn',
 
     // Disallow unused variables and arguments (experimental, uses TypeScript type information.)
