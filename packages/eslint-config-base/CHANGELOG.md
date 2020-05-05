@@ -9,6 +9,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.1.1 - May 5, 2020
+
+Literally no changes, just redeployed to NPM.
+
 ## 0.1.0 - May 5, 2020
 
 ### Features
