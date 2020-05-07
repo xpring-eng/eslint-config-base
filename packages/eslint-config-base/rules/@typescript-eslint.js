@@ -157,7 +157,10 @@ module.exports = {
       {
         selector: 'variable',
         types: ['boolean'],
-        format: ['camelCase'],
+        // This isn't really PascalCase, because the prefix gets removed.
+        // So something like "isValidPayID" would get the prefix stripped
+        // and "ValidPayID" is in PascalCase.
+        format: ['PascalCase'],
         prefix: ['is', 'should', 'has', 'can', 'did', 'will'],
       },
       // Enforce that type parameters (generics) are prefixed with T
