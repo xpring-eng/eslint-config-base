@@ -148,9 +148,8 @@ module.exports = {
     'no-unsafe-negation': ['error', { enforceForOrderingRelations: true }],
 
     // Disallow useless backreferences in regular expressions
-    // https://eslint.org/docs/7.0.0/rules/no-useless-backreference
-    // TODO: Enable on ESLint v7
-    'no-useless-backreference': 'off',
+    // https://eslint.org/docs/rules/no-useless-backreference
+    'no-useless-backreference': 'error',
 
     // Disallow assignments that can lead to race conditions due to usage of await or yield
     // https://eslint.org/docs/rules/require-atomic-updates
