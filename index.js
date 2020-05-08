@@ -26,8 +26,8 @@ module.exports = {
     './rules/import',
     './rules/mocha',
     './rules/prettier',
-  ].map(
-    require.resolve,
-  ),
+  ].map(require.resolve),
   rules: {},
+
+  reportUnusedDisableDirectives: true,
 }

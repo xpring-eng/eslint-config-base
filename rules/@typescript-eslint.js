@@ -157,7 +157,10 @@ module.exports = {
       {
         selector: 'variable',
         types: ['boolean'],
-        format: ['camelCase'],
+        // This isn't really PascalCase, because the prefix gets removed.
+        // So something like "isValidPayID" would get the prefix stripped
+        // and "ValidPayID" is in PascalCase.
+        format: ['PascalCase'],
         prefix: ['is', 'should', 'has', 'can', 'did', 'will'],
       },
       // Enforce that type parameters (generics) are prefixed with T
@@ -732,6 +735,19 @@ module.exports = {
       rules: {
         // No need to handle promise exceptions in test blocks, since they'll just be handled anyways.
         '@typescript-eslint/no-floating-promises': 'off',
+
+
+        // We purposefully break some TypeScript assumptions in various tests (like giving `null` to a database access function)
+        '@typescript-eslint/ban-ts-comment': [
+          'error',
+          {
+            // TODO: Turn ts-ignore to true when TS 3.9 gets released
+            'ts-expect-error': false,
+            'ts-ignore': false,
+            'ts-nocheck': true,
+            'ts-check': false,
+          },
+        ],
       },
     },
   ],

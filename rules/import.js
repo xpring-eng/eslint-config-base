@@ -227,6 +227,14 @@ module.exports = {
 
   overrides: [
     {
+      files: ['src/index.ts'],
+      rules: {
+        // In SDKs, we export stuff that isn't used by the library itself,
+        // for consumption in other libraries/apps.
+        'import/no-unused-modules': 'off',
+      },
+    },
+    {
       files: ['test/**/*.ts'],
       rules: {
         // Warn when modules have too many dependencies (code smell)
