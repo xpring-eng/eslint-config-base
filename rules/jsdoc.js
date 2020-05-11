@@ -63,6 +63,7 @@ module.exports = {
     'jsdoc/check-param-names': [
       'error',
       {
+        checkRestProperty: true,
         allowExtraTrailingParamDocs: false,
       },
     ],
@@ -168,6 +169,10 @@ module.exports = {
     'jsdoc/require-param': [
       'error',
       {
+        enableFixer: true,
+        enableRootFixer: true,
+        enableRestElementFixer: true,
+        checkRestProperty: true,
         checkConstructors: true,
         checkGetters: false,
         checkSetters: false,
