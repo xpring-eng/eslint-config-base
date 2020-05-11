@@ -121,6 +121,10 @@ module.exports = {
     // replaced by https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md
     'no-duplicate-imports': 'off',
 
+    // Disallow specified names in exports
+    // https://eslint.org/docs/rules/no-restricted-exports
+    'no-restricted-exports': 'off',
+
     // disallow specific imports
     // https://eslint.org/docs/rules/no-restricted-imports
     // Replaced by https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-nodejs-modules.md
