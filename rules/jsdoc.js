@@ -94,19 +94,6 @@ module.exports = {
     // https://github.com/gajus/eslint-plugin-jsdoc#empty-tags
     'jsdoc/empty-tags': 'error',
 
-    // Enforces a regular expression pattern on descriptions.
-    // https://github.com/gajus/eslint-plugin-jsdoc#match-description
-    'jsdoc/match-description': [
-      'error',
-      {
-        matchDescription: '^([A-Z]|[`\\d_])[\\s\\S]*[.?!`]$',
-        tags: {
-          param: true,
-          returns: true,
-        },
-      },
-    ],
-
     // Enforces a consistent padding of the block description.
     // https://github.com/gajus/eslint-plugin-jsdoc#newline-after-description
     'jsdoc/newline-after-description': ['error', 'always'],
@@ -238,6 +225,20 @@ module.exports = {
     'jsdoc/check-indentation': 'off',
 
     // Misc disabled rules
+
+    // Enforces a regular expression pattern on descriptions.
+    // https://github.com/gajus/eslint-plugin-jsdoc#match-description
+    // Already taken care of by jsdoc/require-description-complete-sentence
+    'jsdoc/match-description': [
+      'off',
+      {
+        matchDescription: '^([A-Z]|[`\\d_])[\\s\\S]*[.?!`]$',
+        tags: {
+          param: true,
+          returns: true,
+        },
+      },
+    ],
 
     // Requires that all functions have examples.
     // https://github.com/gajus/eslint-plugin-jsdoc#require-example
