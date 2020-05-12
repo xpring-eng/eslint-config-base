@@ -65,12 +65,18 @@ module.exports = {
       {
         checkRestProperty: true,
         allowExtraTrailingParamDocs: false,
+        enableFixer: true,
       },
     ],
 
     // Ensures that property names in JSDoc are not duplicated on the same block and that nested properties have defined roots.
     // https://github.com/gajus/eslint-plugin-jsdoc#check-property-names
-    'jsdoc/check-property-names': 'error',
+    'jsdoc/check-property-names': [
+      'error',
+      {
+        enableFixer: true,
+      },
+    ],
 
     // Reports against Google Closure Compiler syntax.
     // https://github.com/gajus/eslint-plugin-jsdoc#check-syntax
