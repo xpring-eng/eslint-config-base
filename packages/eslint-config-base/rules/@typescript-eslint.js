@@ -228,7 +228,12 @@ module.exports = {
 
     // Forbids the use of classes as namespaces.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extraneous-class.md
-    '@typescript-eslint/no-extraneous-class': 'error',
+    '@typescript-eslint/no-extraneous-class': ['error', {
+      allowConstructorOnly: false,
+      allowEmpty: false,
+      allowStaticOnly: true,
+      allowWithDecorator: false,
+    }],
 
     // Requires Promise-like values to be handled appropriately.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-floating-promises.md
