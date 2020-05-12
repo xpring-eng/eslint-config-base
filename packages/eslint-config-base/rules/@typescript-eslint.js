@@ -573,7 +573,7 @@ module.exports = {
           -1,
           0,
           1,
-          // 2,
+          2,
 
           // Often need to convert milliseconds to/from seconds.
           1000,
