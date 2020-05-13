@@ -541,6 +541,18 @@ module.exports = {
       { allowKeywords: true, allowPrivateClassPropertyAccess: true },
     ],
 
+    // Require or disallow an empty line between class members
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/lines-between-class-members.md
+    'lines-between-class-members': 'off',
+    '@typescript-eslint/lines-between-class-members': [
+      'error',
+      'always',
+      {
+        exceptAfterOverload: true,
+        exceptAfterSingleLine: true,
+      },
+    ],
+
     // Disallow generic Array constructors
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-array-constructor.md
     'no-array-constructor': 'off',
