@@ -753,14 +753,12 @@ module.exports = {
         // No need to handle promise exceptions in test blocks, since they'll just be handled anyways.
         '@typescript-eslint/no-floating-promises': 'off',
 
-
         // We purposefully break some TypeScript assumptions in various tests (like giving `null` to a database access function)
         '@typescript-eslint/ban-ts-comment': [
           'error',
           {
-            // TODO: Turn ts-ignore to true when TS 3.9 gets released
             'ts-expect-error': false,
-            'ts-ignore': false,
+            'ts-ignore': true,
             'ts-nocheck': true,
             'ts-check': false,
           },
