@@ -11,6 +11,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 0.2.1 - May 18, 2020
 
+- Allow `@types/**/*.d.ts` files to exist without warning.
 - Upgrade `eslint-plugin-mocha` to 7.0.0
 
 ## 0.2.0 - May 11, 2020
