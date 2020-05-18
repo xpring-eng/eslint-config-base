@@ -243,6 +243,13 @@ module.exports = {
       }
     },
     {
+      files: ['@types/**/*.d.ts'],
+      rules: {
+        // Declaration files could allegedly be parsed as a valid script according to eslint-plugin-import.
+        'import/unambiguous': 'off',
+      },
+    },
+    {
       files: ['test/**/*.test.ts'],
       rules: {
         // Our Mocha test files never export anything.
@@ -250,7 +257,6 @@ module.exports = {
 
         // Importing mocha is a side-effecting import
         'import/no-unassigned-import': ['error', { allow: ['mocha'] }],
-
       },
     },
   ],
