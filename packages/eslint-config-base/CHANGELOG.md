@@ -9,6 +9,27 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.2.1 - May 18, 2020
+
+- Upgrade `eslint-plugin-mocha` to 7.0.0
+
+## 0.2.0 - May 11, 2020
+
+- Bump required version of ESLint to 7.0.0
+- Add new rules and options from ESLint 7.0.0
+  - `default-case-last`
+  - `no-void`
+  - `no-useless-backreference`
+  - `no-restricted-exports`
+
+## 0.1.2 - May 8, 2020
+
+- Disable `@ts-*` comment errors for `*.test.ts` files, where it's reasonable to pass null on purpose
+- Allow src/index.ts to export things that are not used
+  - needed for libraries we build that exports functionality.
+- Report on unused ESLint disable directives
+- Fix bug in boolean variable naming-convention
+
 ## 0.1.1 - May 5, 2020
 
 Literally no changes, just redeployed to NPM.
