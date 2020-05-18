@@ -124,8 +124,6 @@ module.exports = {
     camelcase: 'off',
     '@typescript-eslint/naming-convention': [
       'warn',
-      // TODO: Should we enforce strictCamelCase?
-      // Default settings
       {
         selector: 'default',
         format: ['camelCase'],
@@ -144,15 +142,6 @@ module.exports = {
         selector: 'typeLike',
         format: ['PascalCase'],
       },
-      // Enforce that private members are prefixed with an underscore.
-      // Disabled because Microsoft's style guide argues against it:
-      // https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
-      // {
-      //   selector: 'memberLike',
-      //   modifiers: ['private'],
-      //   format: ['camelCase'],
-      //   leadingUnderscore: 'require',
-      // },
       // Enforce that boolean variables are prefixed with an allowed verb.
       {
         selector: 'variable',
@@ -185,12 +174,12 @@ module.exports = {
       // Enforce that enumMembers are PascalCase
       {
         selector: 'enumMember',
-        format: ['PascalCase'],
+        format: ['StrictPascalCase', 'UPPER_CASE'],
       },
       // Allow property names to be snake_case
       {
         selector: 'property',
-        format: ['camelCase', 'snake_case'],
+        format: ['camelCase'],
       },
     ],
 
@@ -231,7 +220,7 @@ module.exports = {
     '@typescript-eslint/no-extraneous-class': ['error', {
       allowConstructorOnly: false,
       allowEmpty: false,
-      allowStaticOnly: true,
+      allowStaticOnly: false,
       allowWithDecorator: false,
     }],
 
