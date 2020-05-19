@@ -65,7 +65,7 @@ module.exports = {
       {
         checkRestProperty: true,
         allowExtraTrailingParamDocs: false,
-        enableFixer: true,
+        enableFixer: false,
       },
     ],
 
@@ -74,7 +74,7 @@ module.exports = {
     'jsdoc/check-property-names': [
       'error',
       {
-        enableFixer: true,
+        enableFixer: false,
       },
     ],
 
@@ -166,6 +166,7 @@ module.exports = {
         enableRootFixer: true,
         enableRestElementFixer: true,
         checkRestProperty: true,
+        checkDestructured: false,
         checkConstructors: true,
         checkGetters: false,
         checkSetters: false,
