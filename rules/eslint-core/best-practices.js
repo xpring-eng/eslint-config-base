@@ -25,7 +25,7 @@ module.exports = {
 
     // specify the maximum cyclomatic complexity allowed in a program
     // https://eslint.org/docs/rules/complexity
-    complexity: ['warn', { max: 8 }],
+    complexity: ['warn', { max: 10 }],
 
     // require return statements to either always or never specify values
     // https://eslint.org/docs/rules/consistent-return
