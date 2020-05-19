@@ -9,6 +9,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+- Increase cyclomatic `complexity` threshold from 8 to 10
+
 ## 0.2.2 - May 19, 2020
 
 - Upgrade to `@typescript-eslint v2.34.0`
