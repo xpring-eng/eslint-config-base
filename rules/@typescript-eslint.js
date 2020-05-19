@@ -124,8 +124,6 @@ module.exports = {
     camelcase: 'off',
     '@typescript-eslint/naming-convention': [
       'warn',
-      // TODO: Should we enforce strictCamelCase?
-      // Default settings
       {
         selector: 'default',
         format: ['camelCase'],
@@ -144,15 +142,6 @@ module.exports = {
         selector: 'typeLike',
         format: ['PascalCase'],
       },
-      // Enforce that private members are prefixed with an underscore.
-      // Disabled because Microsoft's style guide argues against it:
-      // https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
-      // {
-      //   selector: 'memberLike',
-      //   modifiers: ['private'],
-      //   format: ['camelCase'],
-      //   leadingUnderscore: 'require',
-      // },
       // Enforce that boolean variables are prefixed with an allowed verb.
       {
         selector: 'variable',
@@ -185,12 +174,12 @@ module.exports = {
       // Enforce that enumMembers are PascalCase
       {
         selector: 'enumMember',
-        format: ['PascalCase'],
+        format: ['StrictPascalCase', 'UPPER_CASE'],
       },
       // Allow property names to be snake_case
       {
         selector: 'property',
-        format: ['camelCase', 'snake_case'],
+        format: ['camelCase'],
       },
     ],
 
@@ -228,7 +217,12 @@ module.exports = {
 
     // Forbids the use of classes as namespaces.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extraneous-class.md
-    '@typescript-eslint/no-extraneous-class': 'error',
+    '@typescript-eslint/no-extraneous-class': ['error', {
+      allowConstructorOnly: false,
+      allowEmpty: false,
+      allowStaticOnly: false,
+      allowWithDecorator: false,
+    }],
 
     // Requires Promise-like values to be handled appropriately.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-floating-promises.md
@@ -536,6 +530,18 @@ module.exports = {
       { allowKeywords: true, allowPrivateClassPropertyAccess: true },
     ],
 
+    // Require or disallow an empty line between class members
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/lines-between-class-members.md
+    'lines-between-class-members': 'off',
+    '@typescript-eslint/lines-between-class-members': [
+      'error',
+      'always',
+      {
+        exceptAfterOverload: true,
+        exceptAfterSingleLine: true,
+      },
+    ],
+
     // Disallow generic Array constructors
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-array-constructor.md
     'no-array-constructor': 'off',
@@ -573,7 +579,7 @@ module.exports = {
           -1,
           0,
           1,
-          // 2,
+          2,
 
           // Often need to convert milliseconds to/from seconds.
           1000,
@@ -736,14 +742,12 @@ module.exports = {
         // No need to handle promise exceptions in test blocks, since they'll just be handled anyways.
         '@typescript-eslint/no-floating-promises': 'off',
 
-
         // We purposefully break some TypeScript assumptions in various tests (like giving `null` to a database access function)
         '@typescript-eslint/ban-ts-comment': [
           'error',
           {
-            // TODO: Turn ts-ignore to true when TS 3.9 gets released
             'ts-expect-error': false,
-            'ts-ignore': false,
+            'ts-ignore': true,
             'ts-nocheck': true,
             'ts-check': false,
           },
