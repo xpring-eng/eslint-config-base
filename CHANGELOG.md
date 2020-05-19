@@ -9,6 +9,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.2.2 - May 19, 2020
+
+- Upgrade to `@typescript-eslint v2.34.0`
+- Disallow `snake_case` property names
+- Add rule for `lines-between-class-members`
+- Disallow `@ts-ignore` comments in test files.
+
 ## 0.2.1 - May 18, 2020
 
 - Allow `@types/**/*.d.ts` files to exist without warning.
