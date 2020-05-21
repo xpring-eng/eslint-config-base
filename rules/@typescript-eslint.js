@@ -163,7 +163,7 @@ module.exports = {
       // Enforce that enumMembers are PascalCase
       {
         selector: 'enumMember',
-        format: ['StrictPascalCase', 'UPPER_CASE'],
+        format: ['PascalCase', 'UPPER_CASE'],
       },
       // Allow property names to be snake_case
       {
