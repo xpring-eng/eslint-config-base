@@ -339,10 +339,7 @@ module.exports = {
     '@typescript-eslint/no-unnecessary-condition': [
       'error',
       {
-        // Allow using && and || for short-circuiting behavior
-        ignoreRhs: true,
         allowConstantLoopConditions: false,
-        checkArrayPredicates: true,
       },
     ],
 
@@ -420,7 +417,6 @@ module.exports = {
       {
         ignoreConditionalTests: true,
         ignoreMixedLogicalExpressions: true,
-        forceSuggestionFixer: false,
       },
     ],
 
