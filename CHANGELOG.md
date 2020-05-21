@@ -9,7 +9,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.2.3 - May 21, 2020
+
+- Bump `eslint-plugin-tsdoc` from 0.2.4 to 0.2.5
+  - Add support for the `@see` tag!
 - Increase cyclomatic `complexity` threshold from 8 to 10
+  - Seems to be the typical standard
 
 ## 0.2.2 - May 19, 2020
 
