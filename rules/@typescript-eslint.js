@@ -232,7 +232,7 @@ module.exports = {
 
     // Disallow the use of eval()-like methods.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-implied-eval.md
-    '@typescript-eslint/no-implied-eval': 'warn',
+    '@typescript-eslint/no-implied-eval': 'error',
 
     // Disallows explicit type declarations for variables or parameters initialized to a number, string, or boolean
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-inferrable-types.md
@@ -354,22 +354,22 @@ module.exports = {
     // Disallows assigning any to variables and properties
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-assignment.md
     // TODO: ERROR?
-    '@typescript-eslint/no-unsafe-assignment': 'warn',
+    '@typescript-eslint/no-unsafe-assignment': 'error',
 
     // Disallows calling (function calls) on an `any` type value.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-call.md
     // TODO: ERROR?
-    '@typescript-eslint/no-unsafe-call': 'warn',
+    '@typescript-eslint/no-unsafe-call': 'error',
 
     // Disallows member access on an `any` type value.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-member-access.md
     // TODO: ERROR?
-    '@typescript-eslint/no-unsafe-member-access': 'warn',
+    '@typescript-eslint/no-unsafe-member-access': 'error',
 
     // Disallows returning an `any` type value from a function.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-return.md
     // TODO: ERROR?
-    '@typescript-eslint/no-unsafe-return': 'warn',
+    '@typescript-eslint/no-unsafe-return': 'error',
 
     // Disallow unused variables and arguments (experimental, uses TypeScript type information.)
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-vars-experimental.md
