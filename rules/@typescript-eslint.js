@@ -209,10 +209,10 @@ module.exports = {
     '@typescript-eslint/no-extraneous-class': [
       'error',
       {
-      allowConstructorOnly: false,
-      allowEmpty: false,
-      allowStaticOnly: false,
-      allowWithDecorator: false,
+        allowConstructorOnly: false,
+        allowEmpty: false,
+        allowStaticOnly: false,
+        allowWithDecorator: false,
       },
     ],
 
