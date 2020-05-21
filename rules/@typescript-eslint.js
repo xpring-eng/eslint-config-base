@@ -706,6 +706,7 @@ module.exports = {
 
     // Restricts the types allowed in boolean expressions (ternary, if statements, &&, ||, ...)
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/strict-boolean-expressions.md
+    // TODO: This rule may be worth re-visiting now that @typescript-eslint v3.0.0 has completely reworked it
     '@typescript-eslint/strict-boolean-expressions': [
       'off',
       {
@@ -728,6 +729,7 @@ module.exports = {
       files: ['test/**/*.test.ts'],
       rules: {
         // No need to handle promise exceptions in test blocks, since they'll just be handled anyways.
+        // TODO:(hbergren) Is this true?
         '@typescript-eslint/no-floating-promises': 'off',
 
         // We purposefully break some TypeScript assumptions in various tests (like giving `null` to a database access function)
