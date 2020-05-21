@@ -475,7 +475,7 @@ module.exports = {
         allowNumber: true,
         allowBoolean: true,
         allowAny: false,
-        allowNullable: false,
+        allowNullish: false,
       },
     ],
 
