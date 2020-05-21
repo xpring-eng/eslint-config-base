@@ -44,18 +44,7 @@ module.exports = {
     // This rule bans specific types and can suggest alternatives. It does not ban the corresponding runtime objects from being used.
     // It includes a default set of types that are probably mistakes, like using 'String' instead of 'string'.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-types.md
-    '@typescript-eslint/ban-types': [
-      'error',
-      {
-        types: {
-          '{}': {
-            message: "Use 'object' instead",
-            fixWith: 'object',
-          },
-        },
-        extendDefaults: true,
-      },
-    ],
+    '@typescript-eslint/ban-types': 'error',
 
     // Ensures that literals on classes are exposed in a consistent style.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/class-literal-property-style.md
