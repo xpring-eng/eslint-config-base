@@ -27,8 +27,8 @@
     "eslint-config-prettier": "^6.11.0"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "^3.0.0",
-    "@typescript-eslint/parser": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^3.0.1",
+    "@typescript-eslint/parser": "^3.0.1",
     "eslint": ">= 7",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-mocha": "^7.0.0",
@@ -38,8 +38,8 @@
     "typescript": "^3.9.2"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^3.0.0",
-    "@typescript-eslint/parser": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^3.0.1",
+    "@typescript-eslint/parser": "^3.0.1",
     "eslint": "^7.0.0",
     "eslint-find-rules": "^3.4.0",
     "eslint-plugin-import": "^2.20.2",
