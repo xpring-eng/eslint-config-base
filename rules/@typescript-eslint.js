@@ -44,18 +44,7 @@ module.exports = {
     // This rule bans specific types and can suggest alternatives. It does not ban the corresponding runtime objects from being used.
     // It includes a default set of types that are probably mistakes, like using 'String' instead of 'string'.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-types.md
-    '@typescript-eslint/ban-types': [
-      'error',
-      {
-        types: {
-          '{}': {
-            message: "Use 'object' instead",
-            fixWith: 'object',
-          },
-        },
-        extendDefaults: true,
-      },
-    ],
+    '@typescript-eslint/ban-types': 'error',
 
     // Ensures that literals on classes are exposed in a consistent style.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/class-literal-property-style.md
@@ -174,7 +163,7 @@ module.exports = {
       // Enforce that enumMembers are PascalCase
       {
         selector: 'enumMember',
-        format: ['StrictPascalCase', 'UPPER_CASE'],
+        format: ['PascalCase', 'UPPER_CASE'],
       },
       // Allow property names to be snake_case
       {
@@ -217,12 +206,15 @@ module.exports = {
 
     // Forbids the use of classes as namespaces.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extraneous-class.md
-    '@typescript-eslint/no-extraneous-class': ['error', {
-      allowConstructorOnly: false,
-      allowEmpty: false,
-      allowStaticOnly: false,
-      allowWithDecorator: false,
-    }],
+    '@typescript-eslint/no-extraneous-class': [
+      'error',
+      {
+        allowConstructorOnly: false,
+        allowEmpty: false,
+        allowStaticOnly: false,
+        allowWithDecorator: false,
+      },
+    ],
 
     // Requires Promise-like values to be handled appropriately.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-floating-promises.md
@@ -240,7 +232,7 @@ module.exports = {
 
     // Disallow the use of eval()-like methods.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-implied-eval.md
-    '@typescript-eslint/no-implied-eval': 'warn',
+    '@typescript-eslint/no-implied-eval': 'error',
 
     // Disallows explicit type declarations for variables or parameters initialized to a number, string, or boolean
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-inferrable-types.md
@@ -339,10 +331,7 @@ module.exports = {
     '@typescript-eslint/no-unnecessary-condition': [
       'error',
       {
-        // Allow using && and || for short-circuiting behavior
-        ignoreRhs: true,
         allowConstantLoopConditions: false,
-        checkArrayPredicates: true,
       },
     ],
 
@@ -365,22 +354,22 @@ module.exports = {
     // Disallows assigning any to variables and properties
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-assignment.md
     // TODO: ERROR?
-    '@typescript-eslint/no-unsafe-assignment': 'warn',
+    '@typescript-eslint/no-unsafe-assignment': 'error',
 
     // Disallows calling (function calls) on an `any` type value.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-call.md
     // TODO: ERROR?
-    '@typescript-eslint/no-unsafe-call': 'warn',
+    '@typescript-eslint/no-unsafe-call': 'error',
 
     // Disallows member access on an `any` type value.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-member-access.md
     // TODO: ERROR?
-    '@typescript-eslint/no-unsafe-member-access': 'warn',
+    '@typescript-eslint/no-unsafe-member-access': 'error',
 
     // Disallows returning an `any` type value from a function.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unsafe-return.md
     // TODO: ERROR?
-    '@typescript-eslint/no-unsafe-return': 'warn',
+    '@typescript-eslint/no-unsafe-return': 'error',
 
     // Disallow unused variables and arguments (experimental, uses TypeScript type information.)
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-vars-experimental.md
@@ -420,7 +409,6 @@ module.exports = {
       {
         ignoreConditionalTests: true,
         ignoreMixedLogicalExpressions: true,
-        forceSuggestionFixer: false,
       },
     ],
 
@@ -487,7 +475,7 @@ module.exports = {
         allowNumber: true,
         allowBoolean: true,
         allowAny: false,
-        allowNullable: false,
+        allowNullish: false,
       },
     ],
 
@@ -718,6 +706,7 @@ module.exports = {
 
     // Restricts the types allowed in boolean expressions (ternary, if statements, &&, ||, ...)
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/strict-boolean-expressions.md
+    // TODO: This rule may be worth re-visiting now that @typescript-eslint v3.0.0 has completely reworked it
     '@typescript-eslint/strict-boolean-expressions': [
       'off',
       {
@@ -740,6 +729,7 @@ module.exports = {
       files: ['test/**/*.test.ts'],
       rules: {
         // No need to handle promise exceptions in test blocks, since they'll just be handled anyways.
+        // TODO:(hbergren) Is this true?
         '@typescript-eslint/no-floating-promises': 'off',
 
         // We purposefully break some TypeScript assumptions in various tests (like giving `null` to a database access function)
