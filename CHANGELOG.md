@@ -9,6 +9,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.3.1 - May 26, 2020
+
+- Change config for `@typescript-eslint/array-type`
+  - Use `Array<T>` for complex types like unions / intersections
+
 ## 0.3.0 - May 26, 2020
 
 - Upgrade `@typescript-eslint` to 3.0.1
