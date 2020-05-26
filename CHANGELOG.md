@@ -9,6 +9,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.3.0 - May 26, 2020
+
+- Upgrade `@typescript-eslint` to 3.0.1
+  - Update corresponding rules and options
+- Fix bug introduced by using StrictPascalCase for enum members
+- Change severity of TS rules to match `@typescript-eslint` recommendations
+
 ## 0.2.3 - May 21, 2020
 
 - Bump `eslint-plugin-tsdoc` from 0.2.4 to 0.2.5
