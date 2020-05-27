@@ -1,6 +1,9 @@
-# Xpring ESLint Config (Base)
+# `@xpring-eng/eslint-config-base`
 
-## Quick Start
+[![npm version](https://img.shields.io/npm/v/@xpring-eng/eslint-config-base.svg)](https://www.npmjs.com/package/@xpring-eng/eslint-config-base)
+[![Downloads/month](https://img.shields.io/npm/dm/@xpring-eng/eslint-config-base.svg)](http://www.npmtrends.com/@xpring-eng/eslint-config-base)
+
+A super-strict TypeScript linting configuration for enforcing best practices.
 
 ### Installation
 
