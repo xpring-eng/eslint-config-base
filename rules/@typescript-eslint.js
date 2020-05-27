@@ -165,7 +165,6 @@ module.exports = {
         selector: 'enumMember',
         format: ['PascalCase', 'UPPER_CASE'],
       },
-      // Allow property names to be snake_case
       {
         selector: 'property',
         format: ['camelCase'],
@@ -740,6 +739,73 @@ module.exports = {
             'ts-ignore': true,
             'ts-nocheck': true,
             'ts-check': false,
+          },
+        ],
+      },
+    },
+    // Exceptions because of rippled's gRPC stuff.
+    {
+      files: ['**/XRP/**/*.ts'],
+      rules: {
+        // rippled uses casing to distinguish calculated vs real property names.
+        // Thus, we need to allow PascalCase property names for some scenarios.
+        '@typescript-eslint/naming-convention': [
+          'warn',
+          {
+            selector: 'default',
+            format: ['camelCase'],
+            leadingUnderscore: 'allow',
+            trailingUnderscore: 'allow',
+          },
+
+          {
+            selector: 'variable',
+            format: ['camelCase', 'UPPER_CASE'],
+            leadingUnderscore: 'allow',
+            trailingUnderscore: 'allow',
+          },
+
+          {
+            selector: 'typeLike',
+            format: ['PascalCase'],
+          },
+          // Enforce that boolean variables are prefixed with an allowed verb.
+          {
+            selector: 'variable',
+            types: ['boolean'],
+            // This isn't really PascalCase, because the prefix gets removed.
+            // So something like "isValidPayID" would get the prefix stripped
+            // and "ValidPayID" is in PascalCase.
+            format: ['PascalCase'],
+            prefix: ['is', 'should', 'has', 'can', 'did', 'will'],
+          },
+          // Enforce that type parameters (generics) are prefixed with T
+          {
+            selector: 'typeParameter',
+            format: ['PascalCase'],
+            prefix: ['T'],
+          },
+          // Enforce that enums are singular, and do not end with 's' (for type theory reasons)
+          {
+            selector: 'enum',
+            format: ['PascalCase'],
+            filter: {
+              regex: 'Status$',
+              match: false,
+            },
+            custom: {
+              regex: 's$',
+              match: false,
+            },
+          },
+          // Enforce that enumMembers are PascalCase
+          {
+            selector: 'enumMember',
+            format: ['PascalCase', 'UPPER_CASE'],
+          },
+          {
+            selector: 'property',
+            format: ['camelCase', 'PascalCase'],
           },
         ],
       },

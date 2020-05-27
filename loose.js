@@ -21,7 +21,7 @@ module.exports = {
     // TODO: Definitely remove this one
     'max-params': ['warn', { max: 4 }],
 
-    // Disallows assigning any to variables and properties
+    // Disallows assigning `any` to variables and properties
     '@typescript-eslint/no-unsafe-assignment': 'off',
     // Disallows calling (function calls) on an `any` type value.
     '@typescript-eslint/no-unsafe-call': 'off',
@@ -29,6 +29,7 @@ module.exports = {
     '@typescript-eslint/no-unsafe-member-access': 'off',
     // Disallows returning an `any` type value from a function.
     '@typescript-eslint/no-unsafe-return': 'off',
+
     // This rule aims to standardize the use of type assertion style across the codebase.
     '@typescript-eslint/consistent-type-assertions': [
       'error',
