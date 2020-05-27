@@ -9,6 +9,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.3.2 - May 27, 2020
+
+- Add an exception to our `naming-convention` rule
+
+`rippled` uses casing of object property names to indicate whether a property is calculated or "real". So, we need to allow `PascalCase` property names when we use `gRPC`. The way this is currently implemented is an override for all `*.ts` files that live in a `/XRP/` directory.
+
 ## 0.3.1 - May 26, 2020
 
 - Change config for `@typescript-eslint/array-type`
