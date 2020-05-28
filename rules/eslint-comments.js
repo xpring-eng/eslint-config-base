@@ -48,7 +48,7 @@ module.exports = {
     ],
 
     // Require include descriptions in ESLint directive-comments
-    'eslint-comments/require-description': ['error', { ignore: [] }],
+    'eslint-comments/require-description': ['error', { ignore: ['eslint-enable'] }],
 
     /* DISABLED RULES */
 

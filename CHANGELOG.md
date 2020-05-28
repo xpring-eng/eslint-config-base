@@ -9,6 +9,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.5.0 - May 28, 2020
+
+Add `eslint-plugin-eslint-comments` to our linting configuration.
+
+Adds various rules around `/* eslint */` style comments, the most useful of which is requiring that `/* eslint-disable */` comments have comments explaining why you need to disable something.
+
 ## 0.4.0 - May 28, 2020
 
 - Add `eslint-plugin-node` to our linting configuration
