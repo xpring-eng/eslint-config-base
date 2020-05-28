@@ -9,6 +9,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.4.0 - May 28, 2020
+
+- Add `eslint-plugin-node` to our linting configuration
+
+ESLint v7 deprecated all their Node.js-specific rules, and their recommendation is to use `eslint-plugin-node` instead.
+
 ## 0.3.2 - May 27, 2020
 
 - Add an exception to our `naming-convention` rule
