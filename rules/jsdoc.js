@@ -106,7 +106,19 @@ module.exports = {
     // https://github.com/gajus/eslint-plugin-jsdoc#require-description-complete-sentence
     'jsdoc/require-description-complete-sentence': [
       'error',
-      { tags: ['see'], abbreviations: [] },
+      {
+        tags: [
+          'param',
+          'property',
+          'returns',
+          'see',
+          'summary',
+          'deprecated',
+          'throws',
+        ],
+        abbreviations: [],
+        newlineBeforeCapsAssumesBadSentenceEnd: false,
+      },
     ],
 
     // Requires that all functions have a description.
