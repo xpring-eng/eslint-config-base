@@ -195,7 +195,7 @@ module.exports = {
 
     // Requires that all function @property tags have names.
     // https://github.com/gajus/eslint-plugin-jsdoc#require-property-name
-    'jsdoc/require-property-name': 'off',
+    'jsdoc/require-property-name': 'error',
 
     // Requires a return statement in function body if a @returns tag is specified in jsdoc comment.
     // https://github.com/gajus/eslint-plugin-jsdoc#require-returns-check
@@ -262,5 +262,29 @@ module.exports = {
     'jsdoc/require-file-overview': 'off',
   },
 
-  overrides: [],
+  overrides: [
+    {
+      files: ['test/**/*.test.ts'],
+      rules: {
+        // We don't need to JSDoc as much in test files as actual source files.
+        'jsdoc/require-jsdoc': [
+          'warn',
+          {
+            publicOnly: false,
+            require: {
+              // We use arrow functions in test files occasionally when we expect the function to throw an error.
+              // We definitely do not need to JSDoc those.
+              ArrowFunctionExpression: false,
+              ClassDeclaration: true,
+              ClassExpression: true,
+              FunctionDeclaration: true,
+              FunctionExpression: true,
+              MethodDefinition: true,
+            },
+            exemptEmptyFunctions: true,
+          },
+        ],
+      },
+    },
+  ],
 }
