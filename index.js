@@ -20,6 +20,7 @@ module.exports = {
     './rules/eslint-core/variables',
     './rules/eslint-core/style',
     './rules/eslint-core/es6',
+    './rules/eslint-comments',
     './rules/@typescript-eslint',
     './rules/tsdoc',
     './rules/node',
