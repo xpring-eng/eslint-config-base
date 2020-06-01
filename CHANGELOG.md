@@ -9,6 +9,17 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.5.2 - June 1, 2020
+
+- Require `@typescript-eslint: v3.1.0`, which improves some rules detection capabilities, and allows requiring descriptions for `@ts-*` comments.
+- Require `eslint-plugin-mocha: v7.0.1`, which fixes a bug in `max-top-level-suites`, so the rule actually works.
+
+This may result in new linting violations.
+
+## 0.5.1 - May 28, 2020
+
+Add `eslint-plugin-eslint-comments` as a peer dependency.
+
 ## 0.5.0 - May 28, 2020
 
 Add `eslint-plugin-eslint-comments` to our linting configuration.
