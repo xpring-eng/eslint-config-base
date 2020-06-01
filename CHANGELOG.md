@@ -11,7 +11,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 0.5.2 - June 1, 2020
 
-Require `eslint-plugin-mocha: v7.0.1`, which fixes a bug in `max-top-level-suites`, so the rule actually works.
+- Require `@typescript-eslint: v3.1.0`, which improves some rules detection capabilities, and allows requiring descriptions for `@ts-*` comments.
+- Require `eslint-plugin-mocha: v7.0.1`, which fixes a bug in `max-top-level-suites`, so the rule actually works.
 
 This may result in new linting violations.
 
