@@ -57,6 +57,7 @@ module.exports = {
 
     // Disallow the use of process.exit()
     // https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-process-exit.md
+    'no-process-exit': 'off',
     'node/no-process-exit': 'error',
 
     // Disallow bin files that npm ignores
