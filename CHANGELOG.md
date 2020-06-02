@@ -9,6 +9,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.6.0 - June 2, 2020
+
+Add `eslint-plugin-jsdoc` as a peer dependency, to enforce JSDoc comments for functions and classes.
+
 ## 0.5.2 - June 1, 2020
 
 - Require `@typescript-eslint: v3.1.0`, which improves some rules detection capabilities, and allows requiring descriptions for `@ts-*` comments.
