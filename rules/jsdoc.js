@@ -139,7 +139,10 @@ module.exports = {
       'error',
       'always',
       {
-        checkProperties: true,
+        tags: {
+          '*': 'never',
+          property: 'always',
+        },
       },
     ],
 
