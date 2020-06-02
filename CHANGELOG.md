@@ -9,6 +9,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.6.1 - JUNE 2, 2020
+
+- Upgrade `eslint-plugin-jsdoc` to `v27.0.0`, to enforce not using hyphens between a `@returns` tag and its description.
+
 ## 0.6.0 - June 2, 2020
 
 Add `eslint-plugin-jsdoc` as a peer dependency, to enforce JSDoc comments for functions and classes.
