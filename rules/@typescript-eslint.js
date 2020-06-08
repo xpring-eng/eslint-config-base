@@ -42,6 +42,10 @@ module.exports = {
       },
     ],
 
+    // Bans // tslint:<rule-flag> comments from being used (ban-tslint-comment)
+    // https://github.com/typescript-eslint/typescript-eslint/blob/v3.2.0/packages/eslint-plugin/docs/rules/ban-tslint-comment.md
+    '@typescript-eslint/ban-tslint-comment': 'error',
+
     // This rule bans specific types and can suggest alternatives. It does not ban the corresponding runtime objects from being used.
     // It includes a default set of types that are probably mistakes, like using 'String' instead of 'string'.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-types.md
@@ -140,7 +144,7 @@ module.exports = {
         // So something like "isValidPayID" would get the prefix stripped
         // and "ValidPayID" is in PascalCase.
         format: ['PascalCase'],
-        prefix: ['is', 'should', 'has', 'can', 'did', 'will'],
+        prefix: ['is', 'should', 'has', 'can', 'did', 'does', 'will'],
       },
       // Enforce that type parameters (generics) are prefixed with T
       {
@@ -175,6 +179,10 @@ module.exports = {
     // Requires that .toString() is only called on objects which provide useful information when stringified.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-base-to-string.md
     '@typescript-eslint/no-base-to-string': 'error',
+
+    // Disallow non-null assertion in locations that may be confusing
+    // https://github.com/typescript-eslint/typescript-eslint/blob/v3.2.0/packages/eslint-plugin/docs/rules/no-confusing-non-null-assertion.md
+    '@typescript-eslint/no-confusing-non-null-assertion': 'error',
 
     // Disallow the delete operator with computed key expressions (obj['a'] instead of obj.a)
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-dynamic-delete.md
@@ -457,7 +465,12 @@ module.exports = {
 
     // Requires Array#sort calls to always provide a compareFunction.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/require-array-sort-compare.md
-    '@typescript-eslint/require-array-sort-compare': 'warn',
+    '@typescript-eslint/require-array-sort-compare': [
+      'warn',
+      {
+        ignoreStringArrays: false,
+      },
+    ],
 
     // When adding two variables, operands must both be of type number or of type string.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/restrict-plus-operands.md
@@ -785,7 +798,7 @@ module.exports = {
             // So something like "isValidPayID" would get the prefix stripped
             // and "ValidPayID" is in PascalCase.
             format: ['PascalCase'],
-            prefix: ['is', 'should', 'has', 'can', 'did', 'will'],
+            prefix: ['is', 'should', 'has', 'can', 'did', 'does', 'will'],
           },
           // Enforce that type parameters (generics) are prefixed with T
           {

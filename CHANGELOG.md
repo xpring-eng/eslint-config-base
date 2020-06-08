@@ -9,6 +9,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.7.0 - June 8, 2020
+
+Upgrade `@typescript-eslint` to `3.2.0`.
+
+Adds new rules and options from `@typescript-eslint-v3.2.0`, as well as adding `does` as a valid prefix for boolean variables.
+
 ## 0.6.3 - June 8, 2020
 
 - Disable some rules specifically for `*.test.ts` files
