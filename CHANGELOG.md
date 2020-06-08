@@ -9,6 +9,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.6.3 - June 8, 2020
+
+- Disable some rules specifically for `*.test.ts` files
+
+- Allow an "unscoped `this`" keyword, as Mocha lets you do `this.timeout(num)` to set a test-specific timeout.
+- Allow using the `var!` syntax to make non-null assertions in test files, so we don't have to deal with the `null | undefined` case in test files when we _know_ the result will be valid.
+
 ## 0.6.2 - June 8, 2020
 
 - Upgrade `eslint-plugin-import` to one that officially supports ESLint v7.
