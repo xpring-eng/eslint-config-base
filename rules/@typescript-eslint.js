@@ -732,6 +732,12 @@ module.exports = {
         // TODO:(hbergren) Is this true?
         '@typescript-eslint/no-floating-promises': 'off',
 
+        // In Mocha, you can use `this.timeout()` to set a custom timeout for a specific test
+        '@typescript-eslint/no-invalid-this': 'off',
+
+        // We use non-null assertions liberally in tests to allow TypeScript to build
+        '@typescript-eslint/no-non-null-assertion': 'off',
+
         // We purposefully break some TypeScript assumptions in various tests (like giving `null` to a database access function)
         '@typescript-eslint/ban-ts-comment': [
           'error',
