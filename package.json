@@ -1,6 +1,6 @@
 {
   "name": "@xpring-eng/eslint-config-base",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Xpring's base TS ESLint config, following our styleguide",
   "keywords": [
     "eslint",
