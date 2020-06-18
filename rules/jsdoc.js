@@ -222,6 +222,10 @@ module.exports = {
       },
     ],
 
+    // Requires throw statements are documented.
+    // https://github.com/gajus/eslint-plugin-jsdoc#require-throws
+    'jsdoc/require-throws': 'error',
+
     // Requires all types to be valid JSDoc or Closure compiler types without syntax errors.
     // https://github.com/gajus/eslint-plugin-jsdoc#valid-types
     'jsdoc/valid-types': 'error',

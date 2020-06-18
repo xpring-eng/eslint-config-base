@@ -9,6 +9,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.7.1 - June 18, 2020
+
+Upgrade `eslint-plugin-jsdoc`, and require a new rule `require-throws`, which requires documenting all functions that `throw` an error.
+
 ## 0.7.0 - June 8, 2020
 
 Upgrade `@typescript-eslint` to `3.2.0`.
