@@ -110,6 +110,10 @@ module.exports = {
     // https://eslint.org/docs/rules/no-obj-calls
     'no-obj-calls': 'error',
 
+    // Disallow returning values from Promise executor functions
+    // https://eslint.org/docs/rules/no-promise-executor-return
+    'no-promise-executor-return': 'error',
+
     // disallow use of Object.prototypes builtins directly
     // https://eslint.org/docs/rules/no-prototype-builtins
     'no-prototype-builtins': 'warn',
@@ -138,6 +142,12 @@ module.exports = {
     // https://eslint.org/docs/rules/no-unreachable
     // Checked by TypeScript: https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/src/configs/eslint-recommended.ts
     'no-unreachable': 'error',
+
+    // Disallow loops with a body that allows only one iteration
+    // https://eslint.org/docs/rules/no-unreachable-loop
+    'no-unreachable-loop': ['error', {
+      ignore: [],
+    }],
 
     // disallow return/throw/break/continue inside finally blocks
     // https://eslint.org/docs/rules/no-unsafe-finally

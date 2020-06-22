@@ -332,7 +332,13 @@ module.exports = {
 
     // Flags unnecessary equality comparisons against boolean literals.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-boolean-literal-compare.md
-    '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
+    '@typescript-eslint/no-unnecessary-boolean-literal-compare': [
+      'error',
+      {
+        allowComparingNullableBooleansToTrue: false,
+        allowComparingNullableBooleansToFalse: true,
+      },
+    ],
 
     // Prevents conditionals where the type is always truthy or always falsy.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unnecessary-condition.md
@@ -568,6 +574,9 @@ module.exports = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-invalid-this.md
     'no-invalid-this': 'off',
     '@typescript-eslint/no-invalid-this': 'error',
+
+    'no-loss-of-precision': 'off',
+    '@typescript-eslint/no-loss-of-precision': 'error',
 
     // Disallow magic numbers.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-magic-numbers.md
