@@ -9,6 +9,16 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.7.2 - June 22, 2020
+
+- Upgrade `eslint` to `7.3.0`, and add two new rules:
+  - `no-promise-executor-return`
+  - `no-unreachable-loop`
+- Upgrade `@typescript-eslint` to `3.4.0`:
+  - Add `@typescript-eslint/no-loss-of-precision` rule that allows `123_456` numerical separators.
+- Upgrade `eslint-plugin-jsdoc` to `28.0.0`
+- Add Dependabot configuration to only bug me weekly
+
 ## 0.7.1 - June 18, 2020
 
 Upgrade `eslint-plugin-jsdoc`, and require a new rule `require-throws`, which requires documenting all functions that `throw` an error.
