@@ -9,6 +9,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.8.0 - June 23, 2020
+
+- Add `eslint-plugin-array-func` to provide rules for best practices with `.map().filter().reduce()` style operations.
+
 ## 0.7.2 - June 22, 2020
 
 - Upgrade `eslint` to `7.3.0`, and add two new rules:

@@ -26,6 +26,7 @@ module.exports = {
     './rules/tsdoc',
     './rules/node',
     './rules/import',
+    './rules/array-func',
     './rules/mocha',
     './rules/prettier',
   ].map(require.resolve),
