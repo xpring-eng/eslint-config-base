@@ -9,6 +9,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.9.0 - June 29, 2020
+
+- Add `chai-as-promised` plugin to avoid bad tests.
+
 ## 0.8.0 - June 23, 2020
 
 - Add `eslint-plugin-array-func` to provide rules for best practices with `.map().filter().reduce()` style operations.
