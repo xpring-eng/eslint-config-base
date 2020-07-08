@@ -160,6 +160,8 @@ module.exports = {
           FunctionExpression: true,
           MethodDefinition: true,
         },
+        checkConstructors: true,
+        exemptEmptyConstructors: true,
         exemptEmptyFunctions: true,
       },
     ],

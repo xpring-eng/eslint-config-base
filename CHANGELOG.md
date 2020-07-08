@@ -9,6 +9,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.9.1 - July 8, 2020
+
+- Update `typescript-eslint` and `eslint-plugin-jsdoc`.
+- Add an new rule in the latest version of `typescript-eslint` for literal enum members.
+
 ## 0.9.0 - June 29, 2020
 
 - Add `chai-as-promised` plugin to avoid bad tests.
