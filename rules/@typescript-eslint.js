@@ -811,7 +811,7 @@ module.exports = {
             // So something like "isValidPayID" would get the prefix stripped
             // and "ValidPayID" is in PascalCase.
             format: ['PascalCase'],
-            prefix: ['is', 'should', 'has', 'can', 'did', 'does', 'will'],
+            prefix: ['is', 'was', 'should', 'has', 'can', 'did', 'does', 'will'],
           },
           // Enforce that type parameters (generics) are prefixed with T
           {
