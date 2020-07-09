@@ -9,6 +9,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [Unreleased]
 
+## 0.9.2 - July 9, 2020
+
+- Allow `was` as a prefix for boolean variables
+
 ## 0.9.1 - July 8, 2020
 
 - Update `typescript-eslint` and `eslint-plugin-jsdoc`.
