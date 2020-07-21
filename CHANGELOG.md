@@ -13,6 +13,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 - Change `max-statements` restriction from `10` to `15`.
   - Turns out that you can write totally reasonable functions with more than 10 statements.
+- Allow `.json` file extension when `import`ing a JSON file
+  - Turns out TypeScript needs the `.json` file extension to do the import.
 - Upgrade peer dependencies
   - ESLint 7.5.0
     - Better optional chaining

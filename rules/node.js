@@ -133,9 +133,9 @@ module.exports = {
     'node/file-extension-in-import': [
       'error',
       'never',
-      //   {
-      //      ".json": "always",
-      //   },
+      {
+        '.json': 'always',
+      },
     ],
 
     // Require require() calls to be placed at top-level module scope
