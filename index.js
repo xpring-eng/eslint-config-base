@@ -27,8 +27,6 @@ module.exports = {
     './rules/node',
     './rules/import',
     './rules/array-func',
-    './rules/mocha',
-    './rules/chai-as-promised',
     './rules/prettier',
   ].map(require.resolve),
   rules: {},

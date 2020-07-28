@@ -15,7 +15,7 @@ npm install --save-dev typescript @typescript-eslint/parser
 # Ensure ESLint & Prettier are installed
 npm install --save-dev eslint prettier
 # Install plugins used by @xpring-eng/eslint-config-base
-npm install --save-dev @typescript-eslint/eslint-plugin eslint-plugin-import eslint-plugin-mocha eslint-plugin-prettier eslint-plugin-tsdoc
+npm install --save-dev @typescript-eslint/eslint-plugin eslint-plugin-import eslint-plugin-prettier eslint-plugin-jsdoc eslint-plugin-tsdoc eslint-plugin-array-func eslint-plugin-eslint-comments eslint-plugin-node
 
 # Install the Xpring ESLint config
 npm install --save-dev @xpring-eng/eslint-config-base
