@@ -347,6 +347,10 @@ module.exports = {
     {
       files: ['test/**/*.test.ts'],
       rules: {
+        // For our test files, the pattern is to have unnamed functions
+        // https://eslint.org/docs/rules/func-names
+        'func-names': 'off',
+
         // We use `const var = function expression` in tests to wrap functions that we expect to throw an error
         'func-style': 'off',
 

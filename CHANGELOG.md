@@ -2,12 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+This project DOES NOT adhere to Semantic Versioning. New rules may be added in minor versions that cause previously passing code to fail linting. That is working as intended, since the benefits of stricter rules that automatically get introduced when using Dependabot usually outweigh the inconvenience of infrequently having to update code to follow a stricter standard (or adding a `/*eslint-disable*/` comment).
 
 ## [Unreleased]
+
+## 0.11.0 - July 28, 2020
+
+Moved `eslint-plugin-mocha` and the `chai-as-promised` plugin into an [independent configuration](https://github.com/xpring-eng/eslint-config-mocha).
+
+This is necessary so that consumers of this config are not locked in to Mocha, and have the flexibility to choose Jest (or any other testing library) as they see fit.
 
 ## 0.10.0 - July 21, 2020
 
