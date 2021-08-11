@@ -1,3 +1,5 @@
+const common = require('./common')
+
 module.exports = {
   env: {
     node: true, // Enable node global variables & Node.js scoping
@@ -222,7 +224,7 @@ module.exports = {
       },
     },
     {
-      files: ['test/**/*.ts'],
+      files: common.testPaths,
       rules: {
         // We import "unpublished" dependencies in test files (dev dependencies)
         'node/no-unpublished-import': 'off',

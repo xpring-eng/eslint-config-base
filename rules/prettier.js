@@ -1,3 +1,5 @@
+const common = require('./common')
+
 module.exports = {
   env: {
     node: true, // Enable node global variables & Node.js scoping
@@ -88,7 +90,7 @@ module.exports = {
     'arrow-body-style': 'off',
 
     // Require using arrow functions for callbacks
-    //https://eslint.org/docs/rules/prefer-arrow-callback
+    // https://eslint.org/docs/rules/prefer-arrow-callback
     // 'prefer-arrow-callback': ['error', { allowUnboundThis: false }],
     'prefer-arrow-callback': 'off',
 
@@ -115,7 +117,7 @@ module.exports = {
 
   overrides: [
     {
-      files: ['test/**/*.test.ts'],
+      files: common.testPaths,
       rules: {
         // In test files, we often have line comments in the middle of a pipeline of assertions/expectations
         // So, disable requiring an empty line before line comments in test files, so as to not "break" the pipeline.

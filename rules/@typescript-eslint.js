@@ -1,3 +1,5 @@
+const common = require('./common')
+
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: { sourceType: 'module' },
@@ -46,8 +48,8 @@ module.exports = {
     // https://github.com/typescript-eslint/typescript-eslint/blob/v3.2.0/packages/eslint-plugin/docs/rules/ban-tslint-comment.md
     '@typescript-eslint/ban-tslint-comment': 'error',
 
-    // This rule bans specific types and can suggest alternatives. It does not ban the corresponding runtime objects from being used.
-    // It includes a default set of types that are probably mistakes, like using 'String' instead of 'string'.
+    // This rule bans specific types and can suggest alternatives. It does not ban the corresponding runtime objects from being
+    // used. It includes a default set of types that are probably mistakes, like using 'String' instead of 'string'.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-types.md
     '@typescript-eslint/ban-types': 'error',
 
@@ -490,7 +492,7 @@ module.exports = {
     ],
 
     // Enforce template literal expressions to be of string type.
-    //https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/restrict-template-expressions.md
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/restrict-template-expressions.md
     '@typescript-eslint/restrict-template-expressions': [
       'error',
       {
@@ -590,10 +592,7 @@ module.exports = {
       {
         ignore: [
           // Basic numbers
-          -1,
-          0,
-          1,
-          2,
+          -1, 0, 1, 2,
 
           // Often need to convert milliseconds to/from seconds.
           1000,
@@ -660,7 +659,8 @@ module.exports = {
       },
     ],
 
-    // ES2015 provides a default class constructor if one is not specified. As such, it is unnecessary to provide an empty constructor or one that simply delegates into its parent class.
+    // ES2015 provides a default class constructor if one is not specified. As such, it is unnecessary to provide an empty
+    // constructor or one that simply delegates into its parent class.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-useless-constructor.md
     'no-useless-constructor': 'off',
     '@typescript-eslint/no-useless-constructor': 'error',
@@ -700,7 +700,8 @@ module.exports = {
     // Requires type annotations to exist.
     // Note: requiring type annotations unnecessarily can be cumbersome to maintain and generally reduces code readability.
     // TypeScript is often better at inferring types than easily written type annotations would allow.
-    // Instead of enabling typedef, it is generally recommended to use the --noImplicitAny and/or --strictPropertyInitialization compiler options to enforce type annotations only when useful.
+    // Instead of enabling typedef, it is generally recommended to use the --noImplicitAny and/or --strictPropertyInitialization compiler
+    // options to enforce type annotations only when useful.
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/typedef.md
     '@typescript-eslint/typedef': 'off',
 
@@ -752,7 +753,7 @@ module.exports = {
       },
     },
     {
-      files: ['test/**/*.test.ts'],
+      files: common.testPaths,
       rules: {
         // No need to handle promise exceptions in test blocks, since they'll just be handled anyways.
         // TODO:(hbergren) Is this true?
@@ -811,7 +812,16 @@ module.exports = {
             // So something like "isValidPayID" would get the prefix stripped
             // and "ValidPayID" is in PascalCase.
             format: ['PascalCase'],
-            prefix: ['is', 'was', 'should', 'has', 'can', 'did', 'does', 'will'],
+            prefix: [
+              'is',
+              'was',
+              'should',
+              'has',
+              'can',
+              'did',
+              'does',
+              'will',
+            ],
           },
           // Enforce that type parameters (generics) are prefixed with T
           {

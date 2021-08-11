@@ -1,3 +1,5 @@
+const common = require('../common')
+
 module.exports = {
   rules: {
     // require camel case names
@@ -345,7 +347,7 @@ module.exports = {
 
   overrides: [
     {
-      files: ['test/**/*.test.ts'],
+      files: common.testPaths,
       rules: {
         // For our test files, the pattern is to have unnamed functions
         // https://eslint.org/docs/rules/func-names

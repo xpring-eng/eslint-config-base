@@ -1,7 +1,7 @@
 {
-  "name": "@xpring-eng/eslint-config-base",
-  "version": "0.11.0",
-  "description": "Xpring's base TS ESLint config, following our styleguide",
+  "name": "@xrplf/eslint-config",
+  "version": "0.1.0",
+  "description": "The XRPL Foundation's base TypeScript ESLint config, following our styleguide",
   "keywords": [
     "eslint",
     "eslintconfig",
@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/xpring-eng/eslint-config-base"
+    "url": "https://github.com/XRPLF/eslint-config"
   },
   "license": "MIT",
   "main": "index.js",
@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "confusing-browser-globals": "^1.0.9",
+    "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^6.11.0"
   },
   "devDependencies": {
@@ -54,5 +55,26 @@
     "eslint-plugin-tsdoc": "^0.2.5",
     "prettier": "^2.0.5",
     "typescript": "^3.9.2"
+  },
+  "eslintConfig": {
+    "extends": "./base.js",
+    "parserOptions": {
+      "project": "tsconfig.json"
+    },
+    "rules": {
+      "@typescript-eslint/no-require-imports": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-var-requires": "off",
+      "import/unambiguous": "off",
+      "import/no-commonjs": "off",
+      "import/no-unused-modules": "off"
+    }
+  },
+  "prettier": "./prettier.config.js",
+  "engines": {
+    "node": ">=14.15.0 <15.0.0",
+    "npm": ">=7.20.0 <8.0.0"
   }
 }

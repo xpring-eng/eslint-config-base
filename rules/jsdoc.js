@@ -1,3 +1,5 @@
+const common = require('./common')
+
 module.exports = {
   parserOptions: {
     sourceType: 'module',
@@ -273,26 +275,10 @@ module.exports = {
 
   overrides: [
     {
-      files: ['test/**/*.test.ts'],
+      files: common.testPaths,
       rules: {
-        // We don't need to JSDoc as much in test files as actual source files.
-        'jsdoc/require-jsdoc': [
-          'warn',
-          {
-            publicOnly: false,
-            require: {
-              // We use arrow functions in test files occasionally when we expect the function to throw an error.
-              // We definitely do not need to JSDoc those.
-              ArrowFunctionExpression: false,
-              ClassDeclaration: true,
-              ClassExpression: true,
-              FunctionDeclaration: true,
-              FunctionExpression: true,
-              MethodDefinition: true,
-            },
-            exemptEmptyFunctions: true,
-          },
-        ],
+        // We don't need JSDoc in test files
+        'jsdoc/require-jsdoc': 'off',
       },
     },
   ],

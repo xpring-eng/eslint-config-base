@@ -1,3 +1,5 @@
+const common = require('./common')
+
 module.exports = {
   env: {
     node: true, // Enable node global variables & Node.js scoping
@@ -46,9 +48,7 @@ module.exports = {
     'import/no-unused-modules': [
       'warn',
       {
-        // TODO: I would like to enable missingExports, but it doesn't work for files that only export types:
-        // https://github.com/benmosher/eslint-plugin-import/issues/1680
-        missingExports: false,
+        missingExports: true,
         unusedExports: true,
       },
     ],
@@ -97,7 +97,7 @@ module.exports = {
 
     // Reports if a resolved path is imported more than once.
     // https://github.com/benmosher/eslint-plugin-import/blob/3aefa79f167b998485733a1d7f9ba53b8d5bcc80/docs/rules/no-duplicates.md
-    'import/no-duplicates': ['error', {"considerQueryString": true}],
+    'import/no-duplicates': ['error', { considerQueryString: true }],
 
     // Ensure consistent use of file extension within the import path
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
@@ -154,14 +154,17 @@ module.exports = {
 
     // Reports if a module's default export is unnamed
     // https://github.com/benmosher/eslint-plugin-import/blob/d9b712ac7fd1fddc391f7b234827925c160d956f/docs/rules/no-anonymous-default-export.md
-    'import/no-anonymous-default-export': ['error', {
-      allowArray: false,
-      allowArrowFunction: false,
-      allowAnonymousClass: false,
-      allowAnonymousFunction: false,
-      allowLiteral: false,
-      allowObject: false
-    }],
+    'import/no-anonymous-default-export': [
+      'error',
+      {
+        allowArray: false,
+        allowArrowFunction: false,
+        allowAnonymousClass: false,
+        allowAnonymousFunction: false,
+        allowLiteral: false,
+        allowObject: false,
+      },
+    ],
 
     // dynamic imports require a leading comment with a webpackChunkName
     // https://github.com/benmosher/eslint-plugin-import/blob/ebafcbf59ec9f653b2ac2a0156ca3bcba0a7cf57/docs/rules/dynamic-import-chunkname.md
@@ -235,28 +238,28 @@ module.exports = {
       },
     },
     {
-      files: ['test/**/*.ts'],
+      files: common.testPaths,
       rules: {
         // Warn when modules have too many dependencies (code smell)
         // Increased the max for test files and test helper files, since tests usually need to import more things
         'import/max-dependencies': ['warn', { max: 8 }],
-      }
-    },
-    {
-      files: ['@types/**/*.d.ts'],
-      rules: {
-        // Declaration files could allegedly be parsed as a valid script according to eslint-plugin-import.
-        'import/unambiguous': 'off',
-      },
-    },
-    {
-      files: ['test/**/*.test.ts'],
-      rules: {
+
         // Our Mocha test files never export anything.
         'import/no-unused-modules': 'off',
 
         // Importing mocha is a side-effecting import
         'import/no-unassigned-import': ['error', { allow: ['mocha'] }],
+      },
+    },
+    {
+      files: common.typeDeclarationPaths,
+      rules: {
+        // Declaration files could allegedly be parsed as a valid script according to eslint-plugin-import.
+        'import/unambiguous': 'off',
+
+        // Declaration files are often used in SDKs for consumption by
+        // external users.
+        'import/no-unused-modules': 'off',
       },
     },
   ],

@@ -145,9 +145,12 @@ module.exports = {
 
     // Disallow loops with a body that allows only one iteration
     // https://eslint.org/docs/rules/no-unreachable-loop
-    'no-unreachable-loop': ['error', {
-      ignore: [],
-    }],
+    'no-unreachable-loop': [
+      'error',
+      {
+        ignore: [],
+      },
+    ],
 
     // disallow return/throw/break/continue inside finally blocks
     // https://eslint.org/docs/rules/no-unsafe-finally

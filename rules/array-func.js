@@ -1,7 +1,9 @@
 module.exports = {
   env: {
-    node: true, // Enable node global variables & Node.js scoping
-    es2020: true, // Add all ECMAScript 2020 globals and automatically set the ecmaVersion parser option to ES2020
+    // Enable node global variables & Node.js scoping
+    node: true,
+    // Add all ECMAScript 2020 globals and automatically set the ecmaVersion parser option to ES2020
+    es2020: true,
   },
   parserOptions: {
     sourceType: 'module',
@@ -14,7 +16,7 @@ module.exports = {
     // https://github.com/freaktechnik/eslint-plugin-array-func#from-map
     'array-func/from-map': 'error',
 
-    // Avoid the this parameter when providing arrow function as callback in array functions.
+    // Avoid the `this` parameter when providing arrow function as callback in array functions.
     // https://github.com/freaktechnik/eslint-plugin-array-func#no-unnecessary-this-arg
     'array-func/no-unnecessary-this-arg': 'error',
 
